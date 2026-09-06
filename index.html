@@ -1,0 +1,1066 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>湯ノ湖 一枚攻略図(2026・実証版)</title>
+<meta name="description" content="湯ノ湖(栃木県日光市湯元・標高約1,475m)のフライ・ルアー・エサ釣り攻略図。公式規則の逐語・OSM実測地形・公式の日々の釣況記録の採掘だけで組んだ出典明示型。2026年シーズン(5/1〜9/30)の当日判定パネル・実測水温・タナの軸つき。">
+</head>
+<body>
+<style>
+  :root{
+    --bg:#f4f2e9; --panel:#ece9d9; --panel2:#e6e2cf;
+    --ink:#26281f; --ink2:#555140; --muted:#665f49;
+    --gold:#9c7a1a; --gold-strong:#856712;
+    --line:#d5cfb2; --hair:#ccc4a6;
+    --water0:#c9e4e0; --water1:#7fb8bd; --water2:#3d7f92;
+    --shore:#2f6e84;
+    --series:#20708f; --warn:#ad721e;
+    --est:#a1661b; --est-bg:rgba(173,114,30,.10);
+    --ok:#477a45; --ng:#9c4433; --ng-bg:rgba(156,68,51,.08);
+    --halo:#f4f2e9;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0a1b22; --panel:#0f2530; --panel2:#0d212b;
+      --ink:#e6e3d3; --ink2:#b1ab96; --muted:#8b95a1;
+      --gold:#d2ab34; --gold-strong:#e1bf59;
+      --line:#1c3441; --hair:#213a47;
+      --water0:#123039; --water1:#1a4550; --water2:#276374;
+      --shore:#66a8b8;
+      --series:#4396b8; --warn:#b98220;
+      --est:#c78e2d; --est-bg:rgba(185,130,32,.14);
+      --ok:#6da166; --ng:#c06a55; --ng-bg:rgba(192,106,85,.12);
+      --halo:#0a1b22;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0a1b22; --panel:#0f2530; --panel2:#0d212b;
+    --ink:#e6e3d3; --ink2:#b1ab96; --muted:#8b95a1;
+    --gold:#d2ab34; --gold-strong:#e1bf59;
+    --line:#1c3441; --hair:#213a47;
+    --water0:#123039; --water1:#1a4550; --water2:#276374;
+    --shore:#66a8b8;
+    --series:#4396b8; --warn:#b98220;
+    --est:#c78e2d; --est-bg:rgba(185,130,32,.14);
+    --ok:#6da166; --ng:#c06a55; --ng-bg:rgba(192,106,85,.12);
+    --halo:#0a1b22;
+  }
+  *{box-sizing:border-box}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;
+    font-size:13.5px; line-height:1.7; margin:0; padding:28px 18px 60px;
+  }
+  .sheet{max-width:1280px; margin:0 auto}
+  .mincho{font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif}
+  h1,h2,h3{margin:0; font-weight:600}
+  .num{font-variant-numeric:tabular-nums}
+
+  header{border-bottom:2px solid var(--gold); padding-bottom:14px; margin-bottom:18px}
+  .eyebrow{color:var(--gold); letter-spacing:.35em; text-transform:uppercase; font-size:11px; margin-bottom:6px}
+  h1{font-size:34px; letter-spacing:.06em; text-wrap:balance}
+  h1 .pref{font-size:18px; color:var(--ink2); letter-spacing:.12em}
+  @media (max-width:600px){ h1 .pref{display:block; font-size:15px; margin-top:4px} }
+  .subtitle{color:var(--ink2); margin-top:6px; max-width:66em}
+  .headmeta{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; align-items:center}
+  .chip{display:inline-flex; align-items:center; gap:6px; border:1px solid var(--line); border-radius:999px; padding:2px 12px; font-size:12.5px; color:var(--ink2); background:var(--panel)}
+  .chip b{color:var(--ink); font-weight:600}
+  .lakenav{display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-top:14px}
+  .ln-label{font-size:12.5px; font-weight:700; color:var(--gold-strong); letter-spacing:.14em}
+  .ln-tabs{display:inline-flex; flex-wrap:wrap; border:1.5px solid var(--gold); border-radius:8px; overflow:hidden; background:var(--panel)}
+  .ln-tab{display:inline-flex; align-items:center; padding:7px 18px; font-size:14px; font-weight:700; letter-spacing:.08em}
+  .ln-tab + .ln-tab{border-left:1.5px solid var(--gold)}
+  a.ln-tab{color:var(--gold-strong); text-decoration:underline; text-underline-offset:3px}
+  a.ln-tab:hover{background:var(--gold); color:var(--bg)}
+  a.ln-tab:focus-visible{outline:2px solid var(--gold-strong); outline-offset:-2px}
+  .ln-on{background:var(--gold); color:var(--bg); cursor:default}
+  .ln-now{font-size:10px; font-weight:600; border:1px solid currentColor; border-radius:3px; padding:0 5px; margin-left:7px; letter-spacing:.08em}
+  @media (max-width:600px){
+    .ln-tabs{border:none; background:none; overflow:visible; gap:6px}
+    .ln-tab, .ln-tab + .ln-tab{border:1.5px solid var(--gold); border-radius:8px; background:var(--panel); padding:6px 12px; font-size:13px}
+    .ln-tabs .ln-tab.ln-on{background:var(--gold); color:var(--bg)}
+  }
+  .legend3{display:flex; flex-wrap:wrap; gap:14px; margin-top:12px; font-size:12.5px; color:var(--ink2)}
+  .lg{display:inline-flex; align-items:center; gap:7px}
+  .dot-solid{width:12px;height:12px;border-radius:50%;background:var(--gold);flex:none}
+  .dot-dash{width:12px;height:12px;border-radius:50%;border:2px dashed var(--est);background:var(--est-bg);flex:none}
+  .dot-open{width:12px;height:12px;border-radius:50%;border:1.5px solid var(--muted);flex:none}
+
+  .maingrid{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr); gap:18px; align-items:start; margin-top:16px}
+  @media (max-width:1080px){ .maingrid{grid-template-columns:1fr 1fr} }
+  @media (max-width:680px){ .maingrid{grid-template-columns:1fr} }
+
+  .card{background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:14px 16px; margin-bottom:14px}
+  .card h3{font-size:14.5px; letter-spacing:.08em; display:flex; align-items:center; gap:8px; margin-bottom:8px; flex-wrap:wrap}
+  .tag{font-size:11.5px; letter-spacing:.06em; border-radius:3px; padding:1px 7px; font-weight:600; flex:none}
+  .tag-fix{background:var(--gold); color:var(--bg)}
+  .tag-obs{background:var(--series); color:var(--bg)}
+  .tag-est{border:1px dashed var(--est); color:var(--est); background:var(--est-bg)}
+  .tag-gen{border:1px solid var(--muted); color:var(--muted)}
+  .card ul{margin:0; padding-left:1.2em}
+  .card li{margin:3px 0}
+  .card .src{color:var(--muted); font-size:12px}
+  .kv{width:100%; border-collapse:collapse}
+  .kv td{padding:3px 0; vertical-align:top; border-bottom:1px solid var(--hair)}
+  .kv tr:last-child td{border-bottom:none}
+  .kv td:first-child{color:var(--ink2); width:7.5em; padding-right:8px}
+  .warnnote{color:var(--est); font-size:12.5px}
+  .oknote{color:var(--ok)}
+  .ngnote{color:var(--ng)}
+
+  .mapcard{background:var(--panel2); border:1px solid var(--line); border-radius:6px; padding:10px 14px 8px; margin-top:16px}
+  .mapcard h2{font-size:16.5px; letter-spacing:.1em; margin:4px 4px 2px}
+  .mapcard .mapsub{color:var(--ink2); font-size:12.5px; margin:0 4px 6px}
+  svg{display:block; width:100%; height:auto}
+  svg text{font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans",sans-serif}
+  .maplegend{display:flex; flex-wrap:wrap; gap:6px 16px; font-size:12px; color:var(--ink2); margin:0 4px 8px; align-items:center}
+  .ml-hot{width:14px; height:14px; border-radius:50%; background:var(--gold); box-shadow:0 0 5px var(--gold); flex:none}
+  .ml-dim{width:13px; height:13px; border-radius:50%; border:1.6px dashed var(--est); background:var(--est-bg); opacity:.3; flex:none}
+  .ml-ng{width:22px; height:0; border-top:2.5px dashed var(--ng); flex:none}
+  .pointlist{display:grid; grid-template-columns:1fr 1fr; gap:2px 18px; margin-top:10px; font-size:12.5px}
+  @media (max-width:680px){ .pointlist{grid-template-columns:1fr} }
+  .pt{display:flex; gap:8px; padding:5px 2px; border-bottom:1px solid var(--hair); align-items:baseline}
+  .pt:nth-last-child(-n+2){border-bottom:none}
+  .ptn{flex:none; width:21px; height:21px; border-radius:50%; border:1.6px dashed var(--est); color:var(--est); background:var(--est-bg); display:inline-flex; align-items:center; justify-content:center; font-size:11.5px; font-weight:700; transform:translateY(3px)}
+  .pt b{color:var(--ink)}
+  .pt .d{color:var(--ink2)}
+  .pt .s{color:var(--muted); font-size:12px}
+  #lakemap g.dim{opacity:.25}
+  #lakemap g.hot circle{fill:var(--gold); stroke:var(--halo); stroke-width:2; stroke-dasharray:none; filter:drop-shadow(0 0 5px var(--gold))}
+  #lakemap g.hot text.pn{fill:var(--bg)}
+  #lakemap g.hot text.pl{fill:var(--gold-strong); font-weight:700}
+
+  .band{background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:14px 18px; margin-top:16px}
+  .band h2{font-size:16.5px; letter-spacing:.1em; display:flex; align-items:center; gap:10px; margin-bottom:10px; flex-wrap:wrap}
+  .cols3{display:grid; grid-template-columns:repeat(3,1fr); gap:8px 22px}
+  .cols2{display:grid; grid-template-columns:repeat(2,1fr); gap:8px 22px}
+  @media (max-width:900px){ .cols3{grid-template-columns:1fr} .cols2{grid-template-columns:1fr} }
+  .step{display:flex; gap:10px; margin:6px 0}
+  .stepn{flex:none; width:22px; height:22px; border-radius:50%; background:var(--gold); color:var(--bg); font-weight:700; display:flex; align-items:center; justify-content:center; font-size:12px; transform:translateY(2px)}
+  .unk{display:flex; flex-wrap:wrap; gap:8px}
+  .unk span{border:1px dashed var(--muted); border-radius:999px; padding:2px 12px; font-size:12.5px; color:var(--ink2)}
+  .tscroll{overflow-x:auto; -webkit-overflow-scrolling:touch}
+  .bigtable{width:100%; border-collapse:collapse}
+  .bigtable th{color:var(--muted); font-size:12px; text-align:left; font-weight:600; padding:3px 10px 3px 0; border-bottom:1px solid var(--line)}
+  .bigtable td{padding:3px 10px 3px 0; border-bottom:1px solid var(--hair); vertical-align:top}
+  /* 大物実績: 自動レイアウトだと CJK が1文字ずつ折り返して魚種列が縦積みになるため列幅を固定 */
+  .bigfish{table-layout:fixed; font-size:12.5px}
+  .bigfish th:first-child{width:19%}
+  .bigfish th:nth-child(2){width:28%}
+  .bigfish th:nth-child(4){width:15%}
+  .bigfish td{overflow-wrap:anywhere}
+  footer{margin-top:22px; color:var(--muted); font-size:12px; border-top:1px solid var(--line); padding-top:12px}
+  footer a{color:var(--gold)}
+  .honest{background:var(--est-bg); border:1px dashed var(--est); border-radius:6px; padding:12px 16px; margin-top:16px; font-size:13px}
+  .honest b{color:var(--est)}
+
+  .hero{background:var(--panel); border:1.5px solid var(--gold); border-radius:8px; padding:18px 20px 14px; margin-bottom:0}
+  .hero h2{font-size:21px; letter-spacing:.08em; display:flex; align-items:baseline; gap:12px; flex-wrap:wrap}
+  .hero .today{color:var(--gold); font-size:13.5px}
+  .openbadge{display:inline-flex; align-items:center; gap:8px; border-radius:6px; padding:6px 14px; font-size:14.5px; font-weight:700; margin-top:12px}
+  .openbadge.is-open{background:var(--ok); color:var(--bg)}
+  .openbadge.is-closed{background:var(--ng-bg); color:var(--ng); border:1.5px dashed var(--ng)}
+  .openbadge.is-unknown{background:var(--est-bg); color:var(--est); border:1.5px dashed var(--est)}
+  .nextopen{font-size:13px; color:var(--ink2); margin-top:6px}
+  .nextopen b{color:var(--gold-strong)}
+  .selrow{display:flex; flex-wrap:wrap; gap:7px; margin:12px 0 2px; align-items:center}
+  .selrow .sl,.windrow .sl{color:var(--muted); font-size:12px; letter-spacing:.12em; margin-right:4px; flex:none}
+  .pbtn{border:1px solid var(--line); background:var(--panel2); color:var(--ink2); border-radius:999px; padding:4px 13px; font-size:13px; cursor:pointer; font-family:inherit; line-height:1.5}
+  .pbtn:hover{border-color:var(--gold)}
+  .pbtn:focus-visible{outline:2px solid var(--gold); outline-offset:2px}
+  .pbtn.on{background:var(--gold); color:var(--bg); border-color:var(--gold); font-weight:700}
+  .binnote{color:var(--muted); font-size:12px; margin:4px 0 0}
+  .yearnote{color:var(--est); font-size:12.5px; font-weight:600; margin:6px 0 0}
+  .verdict{display:grid; grid-template-columns:230px 1fr 1.2fr; gap:14px 24px; margin-top:14px}
+  @media (max-width:900px){ .verdict{grid-template-columns:1fr} }
+  .vcell h4{margin:0 0 6px; font-size:12px; letter-spacing:.16em; color:var(--muted); font-weight:600}
+  .tanabig{font-size:26px; font-weight:700; color:var(--series); line-height:1.25}
+  .tananote{color:var(--ink2); font-size:12px; margin-top:5px}
+  .vtemps{color:var(--muted); font-size:12px; margin-top:6px}
+  .vpts{display:flex; flex-wrap:wrap; gap:6px}
+  .vpt{border:1.5px dashed var(--est); background:var(--est-bg); color:var(--ink); border-radius:999px; padding:2px 11px; font-size:12.5px}
+  .vpt b{color:var(--est); font-weight:700}
+  .vptc{color:var(--ng); font-size:11.5px; margin-left:6px}
+  .vsub{color:var(--ink2); font-size:12px; margin-top:8px}
+  .vlist{margin:0; padding-left:1.15em; font-size:13px}
+  .vlist li{margin:3px 0}
+  .vwarn{color:var(--est); font-size:12px; margin-top:6px}
+  .vev{grid-column:1 / -1; border-top:1px dashed var(--hair); padding-top:8px; font-size:12px; color:var(--ink2)}
+  .vev b{color:var(--ink)}
+  .windrow{display:flex; flex-wrap:wrap; gap:7px; margin-top:14px; border-top:1px solid var(--line); padding-top:12px; align-items:center}
+  .windout{margin-top:8px; font-size:13px; background:var(--panel2); border-left:3px solid var(--gold); padding:8px 12px; border-radius:0 4px 4px 0}
+  .windout .we{color:var(--muted); font-size:12px; display:block; margin-top:3px}
+  .closed{font-size:14px; color:var(--ink2); margin-top:12px; line-height:1.9}
+  .gocheck{margin-top:14px; font-size:12px; color:var(--ink2); border-top:1px solid var(--line); padding-top:10px}
+  .gocheck a{color:var(--gold)}
+
+  .cal{display:flex; flex-wrap:wrap; gap:10px 18px; margin-top:8px}
+  .calm{min-width:130px}
+  .calm h4{margin:0 0 4px; font-size:12px; color:var(--ink2); letter-spacing:.1em}
+  .cald{display:flex; flex-wrap:wrap; gap:4px}
+  .cd{display:inline-flex; align-items:center; justify-content:center; min-width:26px; height:24px; border-radius:4px; border:1px solid var(--hair); background:var(--panel2); font-size:12px; color:var(--ink); padding:0 6px}
+  .cd.past{opacity:.38}
+  .cd.today{background:var(--ok); border-color:var(--ok); color:var(--bg); font-weight:700}
+  .cd.next{border:2px solid var(--gold); font-weight:700; color:var(--gold-strong)}
+  .cd.shut{border-style:dashed; border-color:var(--ng); color:var(--ng)}
+  .cd.part{border-color:var(--est); color:var(--est)}
+  .calnote{color:var(--muted); font-size:12px; margin-top:6px}
+  .caption{color:var(--ink2); font-size:12px; margin:6px 0 0}
+
+  .shore-ladder{margin-top:4px}
+  .sl-row{display:grid; grid-template-columns:9.5em 1fr; gap:8px; align-items:center; margin:6px 0}
+  .sl-lab{font-size:12.5px; color:var(--ink2)}
+  .sl-bar{position:relative; height:14px; background:var(--panel2); border:1px solid var(--hair); border-radius:3px}
+  .sl-fill{position:absolute; top:1px; bottom:1px; background:var(--series); border-radius:2px; opacity:.85}
+  .sl-note{grid-column:2; font-size:12px; color:var(--ink2); margin-top:-4px}
+  .mapscroll{overflow-x:auto; -webkit-overflow-scrolling:touch}
+  .mapscroll-hint{display:none}
+  @media (max-width:680px){ .mapscroll svg{min-width:680px}
+    .mapscroll-hint{display:block; font-size:12px; color:var(--est); border:1px dashed var(--est); background:var(--est-bg); border-radius:4px; padding:3px 8px; margin:0 4px 6px} }
+</style>
+
+<div class="sheet">
+<header>
+  <div class="eyebrow mincho">YUNOKO FIELD ATLAS ・ 2026</div>
+  <h1 class="mincho">湯ノ湖 一枚攻略図 <span class="pref">— 栃木県日光市湯元・標高約1,475m</span></h1>
+  <p class="subtitle">奥日光・湯元温泉の足元に横たわる、三岳の噴出溶岩が湯川を堰き止めてできた小さな堰止湖。公式規則の逐語・OSM実測地形・公式が毎日出す釣況記録を主軸に、行政(栃木県・気象庁)や二次媒体は出典を明示したうえで補助として用いた<b>出典明示型</b>の攻略図。5/1〜9/30の期間中は原則毎日釣りができる代わりに、<b>立入禁止区域・持ち帰り20尾・生体持出し禁止・遊漁券は見える場所に装着</b>と規則が細かい湖なので、<b>最初のゲートは「今日は釣れる期間か、券をどこで買うか」</b> — 下のパネルが2026年の期間と照合して即答する。<b>作らない勇気</b>も仕様: 公的な等深線データが存在しないため等深線は描かず、公式フィールドマップの湖面区画は緯度経度が確定できないため位置はすべて破線で「推定」と明示する。</p>
+  <nav class="lakenav" aria-label="姉妹編マップの切替">
+    <span class="ln-label">⇄ 姉妹編</span>
+    <div class="ln-tabs">
+      <a class="ln-tab" href="https://oatbox99.github.io/marunuma-map/" title="丸沼 一枚攻略図へ移動">丸沼</a>
+      <a class="ln-tab" href="https://oatbox99.github.io/ojirinuma-map/" title="大尻沼 一枚攻略図へ移動">大尻沼</a>
+      <a class="ln-tab" href="https://oatbox99.github.io/sugenuma-map/" title="菅沼 一枚攻略図へ移動">菅沼</a>
+      <span class="ln-tab ln-on" aria-current="page">湯ノ湖<span class="ln-now">表示中</span></span>
+      <a class="ln-tab" href="https://oatbox99.github.io/chuzenjiko-map/" title="中禅寺湖 一枚攻略図へ移動">中禅寺湖</a>
+    </div>
+  </nav>
+  <div class="headmeta">
+    <span class="chip"><b>2026年</b> 5/1〜9/30(期間中は原則毎日・日券制)</span>
+    <span class="chip"><b>釣法</b> フライ/ルアー/エサ・舟は貸し舟のみ(持込・エンジン禁止)</span>
+    <span class="chip"><b>最大水深</b> 12〜14.5m(出典で割れ)/面積0.3408km²(OSM実測)</span>
+    <span class="chip"><b>受付</b> 湯ノ湖釣り事務所 0288-62-2524/舟予約 0288-62-2156</span>
+  </div>
+  <div class="legend3">
+    <span class="lg"><span class="dot-solid"></span>確定 — 公式規則の逐語・OSM実測・公式記録</span>
+    <span class="lg"><span class="dot-dash"></span>推定 — 公式区画図の相対位置・実釣記の記述からの推定(誤差あり)</span>
+    <span class="lg"><span class="dot-open"></span>一般論・二次 — 出典が古い/裏取り1系統のみ</span>
+  </div>
+</header>
+
+<!-- ==================== DECISION HERO ==================== -->
+<div class="hero" id="hero">
+  <h2 class="mincho">今日は釣りができる? どう釣る? <span class="today" id="todayline"></span></h2>
+  <div id="openstate"></div>
+  <div class="selrow" id="phasechips" role="group" aria-label="時期の選択"><span class="sl">時期</span></div>
+  <p class="binnote">※時期の区分は公式のタナ記述(「６月頃まではタナが１．５〜３ｍですが、夏には５ｍ以上」)と2026年の実測水温・実釣記録の分布による便宜的なもの。営業判定は2026年の公式シーズン(5/1〜9/30)と連動。</p>
+  <div class="selrow" id="stylerow" role="group" aria-label="スタイルの選択"><span class="sl">スタイル</span>
+    <button class="pbtn on" type="button" data-style="fly" aria-pressed="true">フライ</button>
+    <button class="pbtn" type="button" data-style="lure" aria-pressed="false">ルアー</button>
+    <button class="pbtn" type="button" data-style="bait" aria-pressed="false">エサ</button>
+  </div>
+  <div id="verdict" aria-live="polite"></div>
+  <div class="windrow" id="windrow" role="group" aria-label="状況の選択"><span class="sl">いまの状況は?</span></div>
+  <div class="windout" id="windout" aria-live="polite" hidden></div>
+  <div class="gocheck"><b>出発前に必ず当日情報を確認</b> — このページは実測アーカイブで、当日の釣況・水温・舟の空き・道路状況は載らない:
+    <a href="https://www.naisuimen.or.jp/nikko/" rel="noopener">全内漁連日光支所 公式(釣況・水温・放流・ランキング)</a>/
+    <a href="https://www.naisuimen.or.jp/nikko/info/field-info/index-yunoko.html" rel="noopener">湯ノ湖フィールド情報(ほぼ毎日更新・岸水温/釣果/タナ)</a>/
+    <a href="https://www.nikkoyumoto-vc.com/" rel="noopener">日光湯元ビジターセンター(クマ目撃・道路・駐車場)</a>/
+    <a href="https://twitter.com/tochigi_kotsu" rel="noopener">@tochigi_kotsu(栃木県道路情報・県道/国道の規制)</a>/
+    <a href="https://twitter.com/kokuyuuti" rel="noopener">@kokuyuuti(いろは坂・日光地区の道路状況)</a>/
+    環境省 日光湯元ライブカメラ(env.go.jp camera_no=81・湯元の現況映像)/ 気象庁 奥日光アメダス(41166・気温/風速/降水の実測)/
+    釣り事務所 TEL 0288-62-2524(FAX 0288-62-2526)・貸し舟予約 湯元レストハウス TEL 0288-62-2156・全内漁連日光支所 TEL 0288-55-0702</div>
+</div>
+
+<!-- ==================== MAP ==================== -->
+<div class="mapcard">
+  <h2 class="mincho">実測地形図 × ポイント推定配置</h2>
+  <p class="mapsub">汀線・縮尺・方位・施設位置=OSM実測(確定)。番号ポイントの位置=公式フィールドマップの湖面区画名と実釣記録からの推定(破線)。区画名の緯度経度は公表されておらず、円は区画(面)の代表点を湖側に置いただけなので、根拠にした地物(建物・島)から100m以上離れることがある。<b>一の橋・二の橋から湯滝の流れ出しまでは立入禁止区域</b>。等深線は公的データが存在しないため描かない。</p>
+  <div class="maplegend">
+    <span class="lg"><span class="ml-hot"></span><b>金の丸=いまの推奨エリア</b>(上のパネルの時期・スタイルに連動して点灯)</span>
+    <span class="lg"><span class="ml-dim"></span>薄い丸=今回の推奨外(公式の湖面区画名、または公式マップの岸の地名)</span>
+    <span class="lg"><span class="ml-ng"></span>赤の破線=立入禁止区域の境界(一の橋・二の橋)— 橋より湯滝側へ入らない。境界の呼称は公式内で割れており、湖面にかかる範囲は確定していない。本図では境界線が南東端の汀線とほぼ重なるため、禁止側の斜線ハッチは湖面上ではごく僅かしか出ない — 判断は破線と注記で行うこと</span>
+    <span class="lg"><span class="dot-dash"></span>破線=位置は公式区画図・記述からの推定</span>
+  </div>
+  <p class="mapscroll-hint">→ 地図は横に広いため、画面内では右側(事務所前・滝上・東岸・国道120号)が隠れる。地図を指で<b>左右にスクロール</b>してください。</p>
+  <div class="mapscroll">
+  <svg id="lakemap" viewBox="0 -70 960 1310" role="img" aria-label="湯ノ湖の実測地形図とポイント配置">
+    <defs>
+      <linearGradient id="water" x1="0" y1="0" x2="1" y2="0.35">
+        <stop offset="0" stop-color="var(--water2)"/>
+        <stop offset="0.55" stop-color="var(--water1)"/>
+        <stop offset="1" stop-color="var(--water0)"/>
+      </linearGradient>
+      <pattern id="nofish" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <rect width="14" height="14" fill="transparent"/>
+        <line x1="0" y1="0" x2="0" y2="14" stroke="var(--ng)" stroke-width="1.4" opacity=".33"/>
+      </pattern>
+      <clipPath id="lakeclip"><path id="lakepath2" d=""/></clipPath>
+    </defs>
+
+    <!-- lake body (OSM relation 10415494, 226 pts; path injected by JS into #lakepath) -->
+    <path id="lakepath" d="" fill="url(#water)" stroke="var(--shore)" stroke-width="2"/>
+
+    <!-- no-entry zone: south/east of the two bridges toward Yudaki (clipped to the lake) -->
+    <g clip-path="url(#lakeclip)">
+      <path d="M745,1070L960,1058L960,1240L745,1240Z" fill="url(#nofish)"/>
+    </g>
+    <!-- boundary line at Ichi-no-hashi / Ni-no-hashi (OSM bridge coordinates) -->
+    <line x1="742" y1="1074" x2="905" y2="1058" stroke="var(--ng)" stroke-width="2.5" stroke-dasharray="8 5"/>
+    <g fill="var(--ng)">
+      <rect x="850" y="1062" width="10" height="10"/>
+      <rect x="759" y="1064" width="10" height="10"/>
+    </g>
+    <g paint-order="stroke" stroke="var(--halo)" stroke-width="3">
+      <text x="906" y="1050" font-size="10.5" fill="var(--ng)" text-anchor="end">一の橋</text>
+      <text x="742" y="1058" font-size="10.5" fill="var(--ng)" text-anchor="end">二の橋</text>
+      <text x="716" y="1120" font-size="11.5" fill="var(--ng)" font-weight="700" text-anchor="end">立入禁止区域 — 橋より湯滝側へ入らない</text>
+      <text x="716" y="1136" font-size="10" fill="var(--ink2)" text-anchor="end">公式内で境界の呼称が割れる(区域ページ「一の橋・二の橋から」/ガイドPDF「湖尻橋下流端から」)</text>
+    </g>
+
+    <!-- outflow: Yudaki (OSM node) -->
+    <g stroke="var(--series)" fill="var(--series)">
+      <line x1="866" y1="1074" x2="871" y2="1134" stroke-width="1.5"/>
+      <path d="M871,1146L865,1132L877,1132Z"/>
+    </g>
+    <g paint-order="stroke" stroke="var(--halo)" stroke-width="3">
+      <text x="955" y="1152" font-size="10.5" fill="var(--ink)" font-weight="600" text-anchor="end">湯滝(流出口・OSM実測)</text>
+      <text x="955" y="1166" font-size="9.5" fill="var(--ink2)" text-anchor="end">→ 湯滝下〜竜頭の滝上=湯川区域(別券・C&amp;R・竿1本)</text>
+      <text x="955" y="1092" font-size="10" fill="var(--ink2)" text-anchor="end">滝上駐車場(5台・OSM記載 2026-09採掘時点)/前面の水域は立入禁止帯</text>
+    </g>
+    <rect x="889" y="1102" width="11" height="11" fill="var(--gold)"/>
+
+    <!-- R120 Konsei road (schematic) -->
+    <path d="M645,-55 C695,70 645,160 705,270 C765,380 790,480 815,610 C840,740 880,830 915,930 C935,990 945,1060 948,1160" fill="none" stroke="var(--muted)" stroke-width="2.5" stroke-dasharray="7 5" opacity=".55"/>
+    <text x="955" y="-48" font-size="10.5" fill="var(--muted)" text-anchor="end">国道120号 金精道路(経路は概略)</text>
+    <text x="955" y="-35" font-size="10" fill="var(--muted)" text-anchor="end">↑ 金精峠・沼田IC方面(冬期閉鎖12/25正午〜4/24正午) / ↓ 中禅寺湖・清滝IC方面</text>
+
+    <!-- north arrow -->
+    <g stroke="var(--ink2)" fill="var(--ink2)">
+      <line x1="60" y1="18" x2="60" y2="-30" stroke-width="1.5"/>
+      <path d="M60,-38L54,-22L66,-22Z"/>
+      <text x="72" y="-20" font-size="12" stroke="none">N</text>
+    </g>
+
+    <!-- inflow: Shirane-zawa (OSM) -->
+    <g stroke="var(--series)" fill="var(--series)">
+      <line x1="300" y1="272" x2="344" y2="284" stroke-width="1.5"/>
+      <path d="M354,287L342,292L344,280Z"/>
+    </g>
+    <!-- inflow: onsen drainage channel (OSM) -->
+    <g stroke="var(--series)" fill="var(--series)">
+      <line x1="548" y1="58" x2="580" y2="70" stroke-width="1.5"/>
+      <path d="M590,73L578,78L580,66Z"/>
+    </g>
+
+    <!-- fixed features (OSM measured) -->
+    <rect x="407" y="140" width="12" height="12" fill="var(--gold)"/>
+    <rect x="398" y="47" width="11" height="11" fill="var(--gold)"/>
+    <rect x="117" y="267" width="11" height="11" fill="var(--gold)"/>
+    <circle cx="307" cy="38" r="4.5" fill="none" stroke="var(--ink2)" stroke-width="1.6"/>
+    <rect x="600" y="31" width="12" height="12" fill="none" stroke="var(--est)" stroke-width="1.6" stroke-dasharray="3 2"/>
+    <circle cx="552" cy="412" r="4" fill="var(--ink2)"/>
+    <g paint-order="stroke" stroke="var(--halo)" stroke-width="3">
+      <text x="300" y="14" font-size="10" fill="var(--ink2)" text-anchor="end">日光湯元ビジターセンター</text>
+      <text x="392" y="32" font-size="10" fill="var(--ink)" font-weight="600" text-anchor="end">湯元(湖畔)公共駐車場・無料</text>
+      <text x="545" y="52" font-size="10" fill="var(--ink2)" text-anchor="end">湯元温泉の排水路(流入)</text>
+      <text x="620" y="20" font-size="10.5" fill="var(--est)" font-weight="600">湯の湖釣り事務所(受付・位置は推定±40m)</text>
+      <text x="400" y="134" font-size="10.5" fill="var(--ink)" font-weight="600" text-anchor="end">湯元レストハウス(舟予約・発着)</text>
+      <text x="340" y="262" font-size="10" fill="var(--series)" text-anchor="end">白根沢(主要流入・OSM)</text>
+      <text x="132" y="262" font-size="10" fill="var(--ink2)">休暇村日光湯元</text>
+      <text x="566" y="404" font-size="10.5" fill="var(--ink)" font-weight="600" text-anchor="start">兎島</text>
+      <text x="955" y="640" font-size="10" fill="var(--muted)" text-anchor="end">国道120号(概略)</text>
+    </g>
+
+    <!-- weed-suppression experiment plot 2026/7/16-9/10 (position estimated from the hotel frontage) -->
+    <ellipse cx="190" cy="390" rx="85" ry="62" fill="var(--est-bg)" stroke="var(--est)" stroke-width="1.8" stroke-dasharray="6 4"/>
+    <g paint-order="stroke" stroke="var(--halo)" stroke-width="3" text-anchor="middle">
+      <text x="190" y="438" font-size="10" fill="var(--est)" font-weight="700">水草抑制実験区画(2026/7/16〜9/10)</text>
+      <text x="190" y="451" font-size="9.5" fill="var(--est)">投入・接近禁止/位置は推定</text>
+    </g>
+
+    <!-- ===== estimated markers ===== -->
+    <g font-size="11" font-weight="700">
+      <g id="pt1">
+        <circle cx="630" cy="85" r="10" fill="var(--est-bg)" stroke="var(--est)" stroke-width="1.6" stroke-dasharray="4 3"/>
+        <text x="630" y="89" text-anchor="middle" fill="var(--est)" class="pn">1</text>
+        <text x="676" y="72" text-anchor="start" font-size="10" font-weight="600" fill="var(--ink)" class="pl" paint-order="stroke" stroke="var(--halo)" stroke-width="3">事務所前(桟橋・放流点)</text>
+      </g>
+      <g id="pt2">
+        <circle cx="480" cy="175" r="10" fill="var(--est-bg)" stroke="var(--est)" stroke-width="1.6" stroke-dasharray="4 3"/>
+        <text x="480" y="179" text-anchor="middle" fill="var(--est)" class="pn">2</text>
+        <text x="420" y="178" text-anchor="end" font-size="10" font-weight="600" fill="var(--ink)" class="pl" paint-order="stroke" stroke="var(--halo)" stroke-width="3">レストハウス前</text>
+      </g>
+      <g id="pt3">
+        <circle cx="372" cy="288" r="10" fill="var(--est-bg)" stroke="var(--est)" stroke-width="1.6" stroke-dasharray="4 3"/>
+        <text x="372" y="292" text-anchor="middle" fill="var(--est)" class="pn">3</text>
+        <text x="348" y="306" text-anchor="end" font-size="10" font-weight="600" fill="var(--ink)" class="pl" paint-order="stroke" stroke="var(--halo)" stroke-width="3">砂浜〜白根沢(放流点)</text>
+      </g>
+      <g id="pt4">
+        <circle cx="190" cy="390" r="10" fill="var(--est-bg)" stroke="var(--est)" stroke-width="1.6" stroke-dasharray="4 3"/>
+        <text x="190" y="394" text-anchor="middle" fill="var(--est)" class="pn">4</text>
+        <text x="190" y="358" text-anchor="middle" font-size="10" font-weight="600" fill="var(--ink)" class="pl" paint-order="stroke" stroke="var(--halo)" stroke-width="3">終末処理場前</text>
+      </g>
+      <g id="pt5">
+        <circle cx="222" cy="492" r="10" fill="var(--est-bg)" stroke="var(--est)" stroke-width="1.6" stroke-dasharray="4 3"/>
+        <text x="222" y="496" text-anchor="middle" fill="var(--est)" class="pn">5</text>
+        <text x="200" y="481" text-anchor="end" font-size="10" font-weight="600" fill="var(--ink)" class="pl" paint-order="stroke" stroke="var(--halo)" stroke-width="3">清水(岸の地名)</text>
+      </g>
+      <g id="pt6">
+        <circle cx="270" cy="570" r="10" fill="var(--est-bg)" stroke="var(--est)" stroke-width="1.6" stroke-dasharray="4 3"/>
+        <text x="270" y="574" text-anchor="middle" fill="var(--est)" class="pn">6</text>
+        <text x="248" y="562" text-anchor="end" font-size="10" font-weight="600" fill="var(--ink)" class="pl" paint-order="stroke" stroke="var(--halo)" stroke-width="3">ヒノキ前(どうだん)</text>
+      </g>
+      <g id="pt7">
+        <circle cx="270" cy="700" r="10" fill="var(--est-bg)" stroke="var(--est)" stroke-width="1.6" stroke-dasharray="4 3"/>
+        <text x="270" y="704" text-anchor="middle" fill="var(--est)" class="pn">7</text>
+        <text x="248" y="692" text-anchor="end" font-size="10" font-weight="600" fill="var(--ink)" class="pl" paint-order="stroke" stroke="var(--halo)" stroke-width="3">一本杭</text>
+      </g>
+      <g id="pt8">
+        <circle cx="440" cy="930" r="10" fill="var(--est-bg)" stroke="var(--est)" stroke-width="1.6" stroke-dasharray="4 3"/>
+        <text x="440" y="934" text-anchor="middle" fill="var(--est)" class="pn">8</text>
+        <text x="440" y="968" text-anchor="middle" font-size="10" font-weight="600" fill="var(--ink)" class="pl" paint-order="stroke" stroke="var(--halo)" stroke-width="3">白ぶな・三ツ岩・馬の背</text>
+      </g>
+      <g id="pt9">
+        <circle cx="835" cy="1025" r="10" fill="var(--est-bg)" stroke="var(--est)" stroke-width="1.6" stroke-dasharray="4 3"/>
+        <text x="835" y="1029" text-anchor="middle" fill="var(--est)" class="pn">9</text>
+        <text x="838" y="994" text-anchor="middle" font-size="10" font-weight="600" fill="var(--ink)" class="pl" paint-order="stroke" stroke="var(--halo)" stroke-width="3">滝上(放流点)</text>
+      </g>
+      <g id="pt10">
+        <circle cx="665" cy="525" r="10" fill="var(--est-bg)" stroke="var(--est)" stroke-width="1.6" stroke-dasharray="4 3"/>
+        <text x="665" y="529" text-anchor="middle" fill="var(--est)" class="pn">10</text>
+        <text x="700" y="506" text-anchor="start" font-size="10" font-weight="600" fill="var(--ink)" class="pl" paint-order="stroke" stroke="var(--halo)" stroke-width="3">東岸(兎島西・金精口・兎島南・白樺)</text>
+      </g>
+    </g>
+
+    <!-- locator inset -->
+    <g transform="translate(14,40) scale(0.65)">
+    <!-- locator inset: 5 lakes, OSM outlines, 49.2 m/px at scale 1 -->
+    <g id="locator" transform="translate(0,0)">
+      <rect x="0" y="0" width="320" height="303" rx="4" fill="var(--panel)" stroke="var(--line)"/>
+      <text x="10" y="17" font-size="11" fill="var(--ink2)" font-weight="600">位置関係(OSM実測・5湖・北が上)</text>
+      <g transform="translate(10,30)">
+        <path d="M15.7,24.5L17.1,23.1L18.3,16.7L19.6,16.3L20.2,15.0L19.0,12.1L21.6,10.5L21.6,9.2L23.7,8.4L25.6,4.8L25.5,2.4L30.8,2.8L32.8,4.3L30.1,12.8L32.0,13.6L32.5,15.4L31.2,16.9L28.1,17.7L27.7,19.2L29.2,19.6L27.9,21.1L28.0,23.5L23.2,26.1L21.2,29.3L16.1,26.2L15.7,24.5Z" fill="var(--water1)" stroke="var(--shore)" stroke-width="1"/>
+        <path d="M49.1,20.2L52.7,16.9L53.8,13.8L56.8,12.2L58.9,8.8L60.9,8.4L61.6,4.5L64.1,3.0L66.2,0.0L67.8,0.6L68.4,4.0L71.9,5.3L72.5,8.4L70.8,9.4L69.7,8.4L65.9,12.1L66.1,15.8L63.9,17.0L64.0,19.7L68.1,15.2L73.3,19.9L76.2,16.1L79.3,15.1L81.1,21.3L85.0,21.1L86.3,22.0L85.5,22.1L84.7,26.8L80.5,23.5L71.0,19.9L68.2,20.4L65.6,22.2L64.0,20.5L63.1,23.1L59.6,24.0L57.8,23.2L56.2,19.6L55.2,19.6L52.3,22.4L49.0,21.1L49.1,20.2Z" fill="var(--water1)" stroke="var(--shore)" stroke-width="1"/>
+        <path d="M15.5,23.7L14.9,20.8L12.5,20.4L10.8,21.3L9.5,20.2L7.6,20.4L4.9,26.0L0.7,26.3L0.0,29.5L1.3,31.6L1.2,34.6L5.5,34.3L6.8,33.3L6.8,27.3L8.6,23.8L11.4,23.3L14.1,24.4L15.5,23.7Z" fill="var(--water1)" stroke="var(--shore)" stroke-width="1"/>
+        <path d="M165.7,71.0L167.1,71.1L168.3,68.6L172.3,66.8L170.8,70.5L171.2,71.6L169.3,71.0L169.3,73.3L170.8,76.6L171.3,74.3L173.4,74.2L174.7,79.5L177.1,82.6L176.2,85.5L172.9,84.9L171.5,85.9L169.4,85.3L168.0,84.1L167.3,81.5L164.2,79.8L164.8,75.7L161.1,73.7L165.7,71.0Z" fill="var(--water2)" stroke="var(--shore)" stroke-width="1.6"/>
+        <path d="M278.6,240.2L279.8,242.3L277.2,248.2L273.5,252.6L269.8,255.1L268.2,255.4L266.7,254.4L263.7,257.0L259.4,255.5L259.2,254.0L263.3,246.3L262.7,245.6L260.2,246.6L259.9,249.3L256.2,254.7L254.0,254.7L253.6,252.7L250.9,255.2L243.5,255.4L240.9,253.5L237.1,254.3L235.5,252.2L236.5,248.7L236.0,246.5L238.5,244.1L240.5,244.1L240.7,241.5L242.6,240.3L241.6,237.6L244.3,235.0L241.7,232.4L238.3,232.0L236.8,229.6L240.3,224.1L239.9,220.2L238.1,220.6L236.3,223.7L233.9,224.3L229.2,220.7L229.7,218.8L228.9,216.1L228.0,215.9L225.1,217.1L223.2,219.8L220.5,221.1L219.1,222.8L218.9,225.1L213.5,225.9L212.2,225.0L212.7,223.3L211.8,222.7L211.4,219.6L209.2,220.0L207.2,222.3L203.6,222.9L200.9,221.8L201.4,217.8L194.5,218.4L193.5,217.0L193.7,215.1L192.6,214.3L189.7,214.8L189.4,217.0L186.7,219.0L181.7,220.7L177.8,218.4L176.3,215.1L174.2,213.2L171.6,213.0L170.5,212.0L165.8,213.9L162.9,213.1L161.5,210.4L163.8,204.2L163.2,202.7L164.5,202.4L165.1,200.7L165.4,192.2L169.1,190.5L168.9,187.4L170.6,184.8L175.6,182.5L180.4,185.7L181.8,188.5L183.2,187.1L188.7,186.1L188.5,184.6L191.0,182.7L192.5,183.3L193.4,185.2L198.1,186.8L200.1,186.2L202.0,188.4L204.0,188.9L211.7,185.5L217.6,190.1L219.3,187.0L218.6,185.5L219.3,186.1L222.2,184.7L225.2,186.9L227.4,183.7L234.9,181.9L237.4,184.8L238.0,191.6L246.4,194.5L254.6,202.4L260.8,206.1L265.6,206.8L269.6,210.2L273.0,210.4L274.5,211.6L279.9,210.9L281.5,211.6L282.5,210.5L285.3,210.1L292.5,213.4L300.0,214.5L296.6,222.3L291.4,225.3L290.3,230.4L289.5,230.4L287.9,234.3L283.8,235.2L281.8,237.4L278.7,238.6L278.6,240.2Z" fill="var(--water1)" stroke="var(--shore)" stroke-width="1"/>
+        <line x1="24.4" y1="28" x2="38" y2="38" stroke="var(--ink2)" stroke-width="0.8"/>
+        <line x1="8.2" y1="32" x2="14" y2="50" stroke="var(--ink2)" stroke-width="0.8"/>
+        <g paint-order="stroke" stroke="var(--panel)" stroke-width="3">
+        <text x="36" y="44" text-anchor="start" font-size="11" fill="var(--ink2)" font-weight="500">丸沼</text>
+        <text x="0" y="58" text-anchor="start" font-size="11" fill="var(--ink2)" font-weight="500">大尻沼</text>
+        <text x="66" y="-2" text-anchor="middle" font-size="11" fill="var(--ink2)" font-weight="500">菅沼</text>
+        <text x="184" y="82" text-anchor="start" font-size="13" fill="var(--gold-strong)" font-weight="700">湯ノ湖(本図)</text>
+        <text x="228" y="176" text-anchor="middle" font-size="11" fill="var(--ink2)" font-weight="500">中禅寺湖</text>
+        </g>
+        <g stroke="var(--ink2)" stroke-width="1.2"><line x1="198.5" y1="263" x2="300.0" y2="263"/><line x1="198.5" y1="259" x2="198.5" y2="267"/><line x1="300.0" y1="259" x2="300.0" y2="267"/></g>
+        <text x="249.2" y="279" font-size="10" fill="var(--ink2)" text-anchor="middle">5km</text>
+      </g>
+    </g>
+    </g>
+
+    <!-- scale bar (px_per_100m = 111.4 → 250 m = 278.5 px) -->
+    <g stroke="var(--ink2)" stroke-width="1.5">
+      <line x1="40" y1="1158" x2="318.5" y2="1158"/>
+      <line x1="40" y1="1152" x2="40" y2="1164"/>
+      <line x1="318.5" y1="1152" x2="318.5" y2="1164"/>
+    </g>
+    <text x="179" y="1178" font-size="10" fill="var(--ink2)" text-anchor="middle" class="num">250m</text>
+    <text x="40" y="1210" font-size="9.5" fill="var(--muted)">OSM実測: 面積0.3408km² / 南北948m × 東西790m</text>
+    <text x="955" y="1210" font-size="8.5" fill="var(--muted)" text-anchor="end">地形データ © OpenStreetMap contributors (ODbL)</text>
+  </svg>
+  </div>
+
+  <div class="pointlist">
+    <div class="pt"><span class="ptn">1</span><span><b>事務所前(釣り事務所前・桟橋)</b> <span class="d">— 公式フィールドマップの起点(北端)。成魚放流3か所のひとつ(土日祝12時前後)。2026-06-09 ニジマス65.3cm(フライ・マラブー#6オリーブ)=2026年最大、2026-06-25 60.7cm</span> <span class="s">位置根拠: 釣り事務所はOSM/Nominatim未登録。推定36.8049,139.4258(±40m)</span></span></div>
+    <div class="pt"><span class="ptn">2</span><span><b>レストハウス前</b> <span class="d">— 北端の湖面区画。貸し舟の予約・受付拠点。2026-05-23 ニジマス64.9cm(エサ)、2026-08-30 60.3cm。2026-09-04の船釣りでホンマス38.0cm(フライ・ユスリカ#12・婚姻色)ほかホンマス2・ヒメマス2・ニジマス6の計10尾、別の船はブドウ虫タナ3mでヒメマス30.7cmほか6尾</span> <span class="s">位置根拠: 湯元レストハウス(OSM way 416446056)36.80401,139.42386。区画中心ではなく建物位置</span></span></div>
+    <div class="pt"><span class="ptn">3</span><span><b>砂浜〜白根沢流れ込み</b> <span class="d">— 「レストハウス前から白根沢の流れ込み辺りの平坦な広場」が通称・砂浜。成魚放流3か所のひとつ。2026-07-25は砂浜の昼水温23.7℃(砂浜・昼の2026年7月最高)。<b>7/16〜9/10は南隣の「終末処理場前」が水草抑制実験区画</b> — 区画内および周辺へルアー・釣り針を投げ込まない</span> <span class="s">位置根拠: 白根沢河口のOSM座標 36.80289,139.42328。砂浜は帯状で単一座標では表せない</span></span></div>
+    <div class="pt"><span class="ptn">4</span><span><b>終末処理場前</b> <span class="d">— 公式の湖面区画名(西岸・砂浜と清水の間)。<b>2026年の水草抑制実験区画そのもの(7/16〜9/10)</b>。区画内および周辺へのルアー・釣り針の投入、船での接近・接触が禁止。初日と最終日は潜水作業で立入制限</span> <span class="s">位置根拠: 公式チラシの場所表記「休暇村日光湯元 前」(OSM 36.80298,139.42094)。区画の座標は未確定 — 図の円は休暇村の湖側正面から南へ約120mずらした区画の代表点で、根拠にした地物との差は100m級</span></span></div>
+    <div class="pt"><span class="ptn">5</span><span><b>清水</b>(岸の地名) <span class="d">— 公式フィールドマップの赤字ラベル。西岸で終末処理場とどうだんの間。同名の湖面区画は無い。湧水由来の地名と推測されるが裏づけ記述は未取得</span> <span class="s">位置根拠: 公式マップの相対位置のみ(湖面区画14件には含まれない)</span></span></div>
+    <div class="pt"><span class="ptn">6</span><span><b>どうだん・ひのき(岸)/ヒノキ前(湖面区画)</b> <span class="d">— 終末処理場前と一本杭の間。2026-05-03「どうだん」でニジマス62.5cm(2026年60cm超のひとつ)</span> <span class="s">位置根拠: 公式マップのみ。岸の地名(赤字)と湖面区画(黄色)は別系統で混同しない</span></span></div>
+    <div class="pt"><span class="ptn">7</span><span><b>一本杭</b> <span class="d">— ヒノキ前の南、湖最深部・馬の背の西にあたる西〜南西側の広い区画。公式の湖面区画14件のひとつ</span> <span class="s">位置根拠: 公式マップの区画名のみ(南東隣に「湖最深部」区画)</span></span></div>
+    <div class="pt"><span class="ptn">8</span><span><b>白ぶな・三ツ岩・馬の背</b> <span class="d">— 湖の南側の底部一帯。西から 白ぶな → 三ツ岩 → 馬の背 → 湖最深部 と並ぶ。近接3区画を1点に統合して表示</span> <span class="s">位置根拠: 公式マップの区画名のみ。二の橋(36.79652,139.42739)から西〜北西へ回り込む一帯と推定</span></span></div>
+    <div class="pt"><span class="ptn">9</span><span><b>滝上</b>(湯滝の流れ出し付近) <span class="d">— 成魚放流3か所のひとつ。岸水温の定点観測地点(本図の代表抽出内では 2026-05-05 5.8℃ 〜 2026-07-25 23.6℃、2026-09-04 6:20に17.4℃。全351件は採掘元のみ)。ウェーディングの人気ポイント。2024年9月に婚姻色の個体をDUOスピアヘッドリュウキ4.5cm 赤/ピンクで</span> <span class="s">位置根拠: 一の橋(36.79654,139.42831)・二の橋より湖側(北)の水域。<b>橋より湯滝側は立入禁止</b>のため滝上駐車場の座標は釣り座に使わない</span></span></div>
+    <div class="pt"><span class="ptn">10</span><span><b>東岸(兎島西・金精口・兎島南・白樺)</b> <span class="d">— 公式の湖面区画は北から 兎島西 → 金精口 → 兎島南 → 白樺 の4つ。兎島南・白樺はウェーディングの人気ポイント。「枯木」は湖面区画ではなく東岸の地名ラベル</span> <span class="s">位置根拠: 兎島(OSM node 5237500922)36.80185,139.42526。他の区画は座標未確定。<b>遊歩道・木道の上からは投げない(共通規則⑩)— 入水してから</b></span></span></div>
+    <div class="pt"><span class="ptn" style="border-style:solid; background:var(--gold); color:var(--bg); border-color:var(--gold)">券</span><span><b>湯ノ湖釣り事務所(受付)</b> <span class="d">— 湯ノ湖の一般券を買えるのはここと<b>赤沼茶屋</b>の2か所のみ。5/2〜9/30は6:30〜17:00(解禁前日4/30は17:00〜21:00、解禁日5/1は3:00〜17:00)。TEL 0288-62-2524</span> <span class="s">位置=OSM未登録のため推定(±40m)</span></span></div>
+    <div class="pt"><span class="ptn" style="border-style:solid; background:var(--gold); color:var(--bg); border-color:var(--gold)">舟</span><span><b>湯元レストハウス(貸し舟)</b> <span class="d">— 舟の予約先 TEL 0288-62-2156。公式「舟を予約してから釣り券を購入」。2人乗り3,700円/3人乗り5,000円</span> <span class="s">位置=OSM way 416446056(確定)</span></span></div>
+  </div>
+</div>
+
+<div class="maingrid">
+
+<!-- ==================== COL 1 ==================== -->
+<div>
+  <div class="card">
+    <h3>基本情報 <span class="tag tag-fix">確定</span> <span class="tag tag-est">両論あり</span></h3>
+    <table class="kv num">
+      <tr><td>所在地</td><td>栃木県日光市湯元。<b>栃木県</b>。日光宇都宮道路 清滝ICから26.4km、関越道 沼田ICからは58.3km(金精道路経由)</td></tr>
+      <tr><td>標高</td><td>1,475m(公式フィールドマップ「海抜１４７５m」/デジタル大辞泉)。<span class="warnnote">1,478m(栃木県・Wikipedia)とする出典もあり3mの差が未解消</span></td></tr>
+      <tr><td>最大水深</td><td>12m/12.5m/13.5m/14.5m と出典により異なる。栃木県2023年度水質調査の<b>湖心実測全水深は13.0〜14.0m</b>。<span class="warnnote">湖心が最深部とは限らず単一値に決められない</span></td></tr>
+      <tr><td>平均水深</td><td><span class="warnnote">いずれの出典にも記載なし — 推定値を置かない</span></td></tr>
+      <tr><td>面積</td><td><b>0.3408km²(OSM実測・relation 10415494)</b>/行政現行値0.35km²。<span class="warnnote">文献値は0.25〜0.53km²と幅が大きい</span></td></tr>
+      <tr><td>成因</td><td>三岳の噴出溶岩が湯川を堰き止めて生じた堰止湖</td></tr>
+      <tr><td>水系</td><td>流入=白根沢(西岸の主要流入)・湯元温泉の温泉排水路(北岸)・湖底湧水/流出=<b>湯滝(南端)→湯川→中禅寺湖</b>。滞留時間 約30日</td></tr>
+      <tr><td>透明度</td><td>2022年度 湖心 年平均2.8m(月別1.9〜4.4m)、2023年度 1.76〜5.2m。<b>富栄養化しやすい湖</b>(湖沼A類型/全窒素全燐Ⅲ類型)</td></tr>
+      <tr><td>環境</td><td>ラムサール条約湿地「奥日光の湿原」の構成要素。pHは7.0〜8.0で温泉流入があっても酸性ではない。<span class="tag tag-gen">一般論</span> <span class="warnnote">冬季は北岸の温泉流入部を除き全面結氷することがある(裏取り1系統。結氷の具体日は未確認)</span></td></tr>
+    </table>
+    <div class="src">出典: 全内漁連日光支所 公式フィールドマップ/栃木県 水質年表・環境白書/OSM relation 10415494</div>
+  </div>
+
+  <div class="card">
+    <h3>2026年のシーズンと遊漁券 <span class="tag tag-fix">確定</span></h3>
+    <table class="kv num">
+      <tr><td>期間</td><td><b>5/1〜9/30</b>。期間中は原則毎日(遊漁券は1日券/午後券の日券制)。<b>10/1〜4/30は禁漁</b></td></tr>
+      <tr><td>釣魚時間</td><td>公式逐語「原則として午前7時から午後5時まで（湯ノ湖の岸釣り・湯川は日の出から日没まで可）解禁日は午前５時から午後５時まで」<span class="warnnote">岸釣り・湯川は日の出から可だが、湯ノ湖券を売る2か所の開始は最早6:00(赤沼茶屋)/6:30(釣り事務所)。日の出が販売開始より早い時期は、券を持たないまま竿を出す形になりかねない — 釣り券は帽子や肩など見える場所に付けることが規則③で義務。⚠販売開始前の入釣の可否について公式の明文規定は採掘結果に無く未確認。現場売り(監視員・1日券のみ+500円)の扱いも含め、釣り事務所 0288-62-2524 へ要確認</span></td></tr>
+      <tr><td>券の販売所</td><td><b>湯ノ湖券は釣り事務所と赤沼茶屋の2か所のみ</b>。釣り事務所(0288-62-2524): 4/30 17:00-21:00/5/1 3:00-17:00/5/2-9/30 6:30-17:00。赤沼茶屋(0288-55-0150): 解禁日4:00-17:00・平日/土日祝とも6:00-17:00。<span class="warnnote">湯滝レストハウス(0288-62-8611・9:00-16:00)は湯川券・小中高生券・回数券のみで湯ノ湖券は買えない</span></td></tr>
+      <tr><td>貸し舟</td><td>要予約。公式「舟を予約してから釣り券を購入」。予約=湯元レストハウス 0288-62-2156。営業は<b>月別カレンダー制</b>(下記)</td></tr>
+      <tr><td>過去実績</td><td>2023・2024・2025年とも5/1〜9/30。2020年のみCOVID-19で解禁が6/3へ延期</td></tr>
+      <tr><td>釣り事務所の開設期間</td><td><span class="warnnote">公式トップページ「4/1〜9/30」/2026年 遊漁ガイドPDF「4/1〜10/15」と公式内部で割れている(未解消)。<b>湖の遊漁期間は5/1〜9/30</b>で、事務所の開設期間とは別物</span></td></tr>
+      <tr><td>解禁フェスタ</td><td><span class="warnnote">競技開始時刻が公式内部で割れている(festa.html「7:00」/2026年遊漁ガイドPDF「5:00」・未解消)。<b>解禁日の釣魚開始は5:00</b></span></td></tr>
+      <tr><td>翌年</td><td>解禁日・料金は前年度末〜春先に公式サイトで発表される慣行。<span class="warnnote">2027年分は未公表</span></td></tr>
+    </table>
+    <div id="calwrap" class="cal"></div>
+    <p class="calnote">緑=今日の月/金枠=次に開く月/灰=終了した月。「一部」= 月内に禁漁日と営業日が混在。破線赤=禁漁の月・貸し舟の定休日(いずれも「入れない・出せない」日)、橙=水草抑制実験による区画利用制限/舟カレンダー未収録。</p>
+    <div class="src">出典: naisuimen.or.jp/nikko/(公式トップ・fishing/fee.html・fishing/boat.html)+2026年9月 釣り舟営業カレンダーPDF(20260905122748)+2026experiment.pdf</div>
+  </div>
+
+  <div class="card">
+    <h3>料金(2026年改定) <span class="tag tag-fix">確定</span></h3>
+    <table class="kv num">
+      <tr><td>1日券</td><td><b>2,600円</b>(5/2〜9/30)/<b>3,600円</b>(解禁日5/1)。舟釣り・岸釣り共通券</td></tr>
+      <tr><td>午後券</td><td>2,000円(5/2〜9/30)。公式「午後券は当日の正午から発売します。」— <b>解禁日は設定なし・現場では買えない</b></td></tr>
+      <tr><td>小中高生</td><td>500円</td></tr>
+      <tr><td>現場売り</td><td><b>1日券のみ・+500円</b>(小中高生券は+300円)の手数料加算</td></tr>
+      <tr><td>回数券</td><td>6枚綴り(大人1日券5枚分の料金)。利用日5/2〜9/30 — 解禁日には使えない。<span class="warnnote">金額の明示は未取得</span></td></tr>
+      <tr><td>宿泊割引</td><td>解禁日400円引き/5/2〜9/30は1日券300円引き・午後券200円引き</td></tr>
+      <tr><td>貸し舟</td><td>2人乗り3,700円/3人乗り5,000円</td></tr>
+      <tr><td>貸し竿・エサ</td><td>貸し竿1,500円(エサ用のべ竿4.5m仕掛け付き/ルアー用リール竿)。ブドウ虫550〜750円・イクラ700円・紅サシ(大)400円・ルアー600〜750円・氷350円/袋</td></tr>
+      <tr><td>支払い</td><td>各種クレジットカード・交通系電子マネー・QRコード決済が利用可。<b>購入済みの釣魚券は原則払い戻し不可</b></td></tr>
+    </table>
+    <div class="src">出典: naisuimen.or.jp/nikko/fishing/fee.html・fishing/boat.html(2026-09-05取得・逐語照合)。氷350円は2026-07-24の現場記録</div>
+  </div>
+</div>
+
+<!-- ==================== COL 2 ==================== -->
+<div>
+  <div class="card">
+    <h3>レギュレーション <span class="tag tag-fix">確定(公式逐語)</span></h3>
+    <ul>
+      <li><b>持ち帰りは1人20尾まで</b> — 「湯ノ湖からの、魚の持ち帰りは1人20尾まで。ただし、活きた魚の持ち出しは禁止です。」<b>活かしバケツ・生け簀のままは違反</b>。締めてクーラーへ</li>
+      <li>「マス類は、全長15cm以下の小型魚をリリース（その場に再放流）すること。」</li>
+      <li><b>釣り券は見える場所に装着</b> — 「釣り券は、帽子や肩、背中など、遠くからも見える場所に付けること。」ポケットに入れたままは規則違反</li>
+      <li>「竿の使用は、一人2本まで。」</li>
+      <li><b>舟は貸し舟のみ</b> — 「舟は、貸し舟のみ、持ち込みは禁止です。貸し舟に、エンジンやモーターを取り付けることも禁止です。」/「舟釣りでは、乗員全員がライフジャケットを着用すること。」/「フローターチューブ等の使用は禁止です。」/「トローリングは禁止です。」</li>
+      <li>「『サビキ仕掛け』、『枝針仕掛け』、『撒き餌』、『寄せ餌』、『活きた魚』の使用は禁止です。」</li>
+      <li><b>「遊歩道・木道及び橋の上からの釣魚は禁止です。」</b>(湯ノ湖・湯川の共通ルール⑩)— 東岸は木道が湖岸に接するので入水してから投げる</li>
+      <li>「草木や川虫などを採らないこと。」— <b>現地採集のエサは不可</b>(ラムサール条約湿地・国立公園内)</li>
+      <li>「キャストする時は、周囲の安全を確認して行うこと。釣り糸や釣り針が枝などに絡まないよう留意し、絡まった時は取り除くこと。」(共通⑥)</li>
+      <li>「ゴミは捨てないよう、また周囲のゴミも拾って持ち帰るなど、釣り場の美化に努めること。」(共通⑨)</li>
+      <li>「脚立や竿掛けなどで"場所取り"はしないこと。設置されたものは除去させていただきます。」/「生死にかかわらず、魚は持ち込まないこと。」/釣り券の払い戻し・再発行・貸し借り・譲渡・転売は禁止</li>
+      <li><b>「一の橋・二の橋から湯滝の流れ出しまでは立入り禁止区域です。」</b> 湯滝下から先は湯川区域で<b>別券・キャッチ&amp;リリース・竿1本</b>(ビク・クーラーの持込も禁止)</li>
+      <li class="warnnote"><b>フック規定(バーブレス/シングル/本数)は公式規則に該当条項が見当たらず、本図には書かない</b>。エレキも名指しの条文が無く、規則③の「モーター」に文言上該当すると読めるにとどまる — 使う予定があれば 0288-62-2156 へ事前確認</li>
+    </ul>
+    <div class="src">出典: naisuimen.or.jp/nikko/fishing/regulations.html(共通①〜⑩+湯ノ湖①〜⑥)・fishing/area.html(2026-09-05取得・逐語照合済)</div>
+  </div>
+
+  <div class="card">
+    <h3>ボート運用と岸釣りの実務 <span class="tag tag-obs">確定+実測</span></h3>
+    <ul>
+      <li><b>貸し舟は月別カレンダー制</b>。2026年9月=平日9:00-15:30/土日および9/20-9/23は7:00-17:00/定休 9/1・9/8・9/15・9/24(振替)・9/29。2026年8月=土日および8/11-15は7:00-17:00/平日9:00-15:30/定休 8/4・8/17・8/18・8/25</li>
+      <li class="warnnote"><b>平日は9:00始まりで朝夕の時合に出船できない</b> — 朝夕の深場狙いは土日(7:00-17:00)が基本で、平日の朝夕は岸釣りで対応する。<b>ただし公式カレンダーの連休例外(8/11〜8/15・9/20〜9/23)は平日でも7:00-17:00</b></li>
+      <li><b>7m以深(6m以深)のタナを狙うなら岸より舟が有利</b>(2026-07の実釣傾向)</li>
+      <li>強風時は<b>終日出船停止</b>になる(2026年に少なくとも3日・5/29ほか)。岸釣りへ切り替える前提で計画する</li>
+      <li>岸: 東岸(兎島南・白樺)と滝上がウェーディングの人気ポイント。<b>木道・遊歩道の上からは投げない</b>。白根沢の木橋が流失し修復された経緯があり、岸はぬかるむ箇所がある</li>
+      <li class="warnnote">貸し舟の艇数・通年の出船開始時刻・欠航の風速基準は公表資料に無い(公式は「利用時間や定休日は電話等でお問い合わせください」)— 0288-62-2156 で確認</li>
+    </ul>
+    <div class="src">出典: fishing/boat.html+2026年9月営業カレンダーPDF+公式トップのお知らせ+現地実釣記録</div>
+  </div>
+
+  <div class="card">
+    <h3>魚種 <span class="tag tag-fix">確定(公式の対象魚)</span></h3>
+    <ul>
+      <li><b>ヒメマス</b>(1906年移植)/<b>カワマス=ブルックトラウト</b>(1902年移植)/<b>ホンマス</b>(ビワマスとサクラマスの中間種)/<b>ニジマス</b>(1887年移植)</li>
+      <li>ワカサギ・ウグイ・コイ・フナ も公式に対象魚として列挙(計8種)</li>
+      <li>2026年ランキング(暫定)の最大: ニジマス65.3cm/ホンマス45.2cm/カワマス37.7cm/ヒメマス35.6cm</li>
+      <li class="oknote"><b>ブラウントラウト・イワナは生息を断定しない</b> — 二次記事(日光鱒釣研究所)が列挙するのみで、公式の対象魚8種に含まれず2026年の釣果・ランキングにも実績が無い</li>
+    </ul>
+    <div class="src">出典: naisuimen.or.jp/nikko/(公式トップ 対象魚・2026年ランキング)</div>
+  </div>
+
+  <div class="card">
+    <h3>放流 <span class="tag tag-fix">確定(公式の月別発表)</span></h3>
+    <ul>
+      <li><b>成魚放流は毎週 土・日・祝日</b>。放流箇所は公式逐語で「滝上（湯滝の流れ出し付近）、事務所前の桟橋、砂浜（レストハウス横）の3か所です。放流時間は12時前後」</li>
+      <li>2026年の月別(kg): 4月300/5月<b>1,460</b>/6月640/7月930/8月<b>1,590</b>/9月1,230 — <b>年計6,150kg</b></li>
+      <li>稚魚放流 2026-06-24: <b>ヒメマス3万尾・ホンマス1万尾</b></li>
+      <li class="warnnote">公表されるのは月別のkg数(予定を含む)であって、実際の放流尾数・魚体サイズの実績ではない。<b>魚種内訳は非公表</b></li>
+    </ul>
+    <div class="src">出典: naisuimen.or.jp/nikko/(公式トップ 放流情報)</div>
+  </div>
+</div>
+
+<!-- ==================== COL 3 ==================== -->
+<div>
+  <div class="card">
+    <h3>水の性格 — 実測水温 <span class="tag tag-fix">確定(公式実測)</span></h3>
+    <table class="bigtable num">
+      <tr><th>年月日</th><th>水温</th><th>測点・内容</th></tr>
+      <tr><td>2026-04-22</td><td><b>8.2℃</b></td><td>岸(滝上)・解禁前の資源調査</td></tr>
+      <tr><td>2026-05-05</td><td><b>5.8℃</b></td><td>岸(滝上・朝)— 滝上・朝の5月最低。前夜降雪・気温2.6℃</td></tr>
+      <tr><td>2026-05-16</td><td>13.5℃</td><td>湖心0m(2m 13.1/4m 11.6/6m 10.9/8m 10.7/10m 10.6)</td></tr>
+      <tr><td>2026-05-29</td><td>16.5℃</td><td>岸(滝上・朝)— 滝上・朝の5月最高</td></tr>
+      <tr><td>2026-06-13</td><td>15.1℃</td><td>湖心0m(2m 14.5/4m 13.9/6m 12.8/8m 12.0/10m 11.1)</td></tr>
+      <tr><td>2026-07-12</td><td>18.9℃</td><td>湖心0m(2m 16.2/4m 14.5/6m 13.4/8m 12.9/10m 11.7)躍層が明瞭</td></tr>
+      <tr><td>2026-07-25</td><td><b>23.7℃</b></td><td>岸(砂浜・昼)— 砂浜・昼の7月最高。同日 滝上昼 23.6℃</td></tr>
+      <tr><td>2026-08-02</td><td><b>23.5℃</b></td><td>湖心0m(2m 23.5/4m 18.8/6m 18.1/8m 13.7/10m 12.1)</td></tr>
+      <tr><td>2026-08-08</td><td>21.6℃</td><td>岸(滝上・朝)— 滝上・朝の8月最高</td></tr>
+      <tr><td>2026-08-29</td><td>17.1℃</td><td>岸(滝上・朝)— 滝上・朝の8月最低</td></tr>
+      <tr><td>2026-08-30</td><td>17.9℃</td><td>湖心0m(2m 16.2/4m 14.4/6m 13.5/8m 12.9/10m 12.4)</td></tr>
+      <tr><td>2026-09-04</td><td>17.4℃</td><td>岸(滝上・6:20)</td></tr>
+      <tr><td>2025-08-03</td><td><b>23.8℃</b></td><td>岸(滝上)— 岸実測の既知最高値</td></tr>
+      <tr><td>2024-09-14</td><td>19.7℃</td><td>岸(滝上・朝)— 滝上・朝の9月最高</td></tr>
+      <tr><td>2024-09-28</td><td>16.2℃</td><td>岸(滝上・朝)— 滝上・朝の9月最低。9月後半は朝で16℃台まで下がる日が出る</td></tr>
+    </table>
+    <p class="caption">全15点が<b>2024〜2026年の実測</b>(10年以上前の古い測定値は含まない)。内訳は2026年12点・2025年1点・2024年2点で、<b>年は行頭の年月日で必ず確認すること</b>。公式が毎日出す岸水温346点+湖心鉛直プロファイル5点の計351件からの代表抽出。<span class="warnnote">岸(滝上・砂浜)と湖心0mは測点が違うため直接比較しない</span> — 行ごとに測点を明記した。</p>
+    <p class="caption warnnote">ブリタニカの「夏も水温20℃をこえない」という記述は、上の実測(23.5〜23.8℃)が明確に否定している。二次記述より実測を採る。</p>
+  </div>
+
+  <div class="card">
+    <h3>この湖の軸は「タナ(深さ)」 <span class="tag tag-fix">確定(公式)+実測</span></h3>
+    <p style="margin:0 0 6px; font-size:12.5px; color:var(--ink2)">最大水深12〜14.5mの浅い湖で、公式が<b>「６月頃まではタナが１．５〜３ｍですが、夏には５ｍ以上」</b>と季節でタナが動くと明言している。躍層は概ね3〜6m。</p>
+    <div class="shore-ladder num">
+      <div class="sl-row"><span class="sl-lab">1.5〜3m(5〜6月)</span><div class="sl-bar"><div class="sl-fill" style="left:11%;width:14%"></div></div></div>
+      <p class="sl-note">公式の低水温期のタナ。5月のブドウ虫エサ釣りはタナ1.5〜2.5mの実釣記録</p>
+      <div class="sl-row"><span class="sl-lab">3m前後(9月)</span><div class="sl-bar"><div class="sl-fill" style="left:20%;width:9%"></div></div></div>
+      <p class="sl-note">夏の5m以上から表層寄りへ戻る過程。2026-09-04 レストハウス前の船でブドウ虫タナ3m→ヒメマス30.7cmほか</p>
+      <div class="sl-row"><span class="sl-lab">躍層 3〜6m</span><div class="sl-bar"><div class="sl-fill" style="left:22%;width:22%"></div></div></div>
+      <p class="sl-note">2026年の湖心プロファイルでは7〜8月に2〜4mで水温が急落(8/2は0〜2m 23.5℃→4m 18.8℃)</p>
+      <div class="sl-row"><span class="sl-lab">5〜8m(7〜8月中旬)</span><div class="sl-bar"><div class="sl-fill" style="left:37%;width:22%"></div></div></div>
+      <p class="sl-note">公式「夏には５ｍ以上」。7月のヒメマスは5〜6.5m。<b>6m以深を通すなら岸より舟が有利</b></p>
+      <div class="sl-row"><span class="sl-lab">10m層</span><div class="sl-bar"><div class="sl-fill" style="left:70%;width:8%;opacity:.4"></div></div></div>
+      <p class="sl-note">2026年の<b>7〜8月</b>の湖心プロファイルでは10m層が11.7〜12.4℃で安定(5/16は10.6℃、6/13は11.1℃で初夏はこれより低い)。ただし2023-08-04には湖心底層のDOが2.0mg/Lまで低下した記録があり、<b>深すぎる層は酸素が薄い</b></p>
+    </div>
+    <p class="caption">等深線は<b>作らない</b> — 国土地理院の湖沼調査対象湖に湯ノ湖は含まれず公的データが存在しない。公式フィールドマップに2〜12mの等深線表記があるが、本図には転載しない(著作・精度)。</p>
+  </div>
+
+  <div class="card">
+    <h3>大物実績 <span class="tag tag-fix">確定(公式ランキング)</span> <span class="tag tag-obs">実釣1件を含む</span></h3>
+    <div class="tscroll"><table class="bigtable num bigfish">
+      <tr><th>サイズ</th><th>魚種</th><th>状況</th><th>出典</th></tr>
+      <tr><td><b>75.5cm</b></td><td>ニジマス</td><td>2023年 年間最大(最終)</td><td>公式</td></tr>
+      <tr><td><b>74.0cm</b></td><td>ニジマス</td><td>2024年 年間最大(最終)</td><td>公式</td></tr>
+      <tr><td>72.0cm</td><td>ニジマス</td><td>2024-05-01 解禁フェスタ・ルアー(フィガー NTS デジ巻き)</td><td>実釣(公式ランキング外)</td></tr>
+      <tr><td>67.4cm</td><td>ニジマス</td><td>2025年 年間最大(最終)</td><td>公式</td></tr>
+      <tr><td><b>65.3cm</b></td><td>ニジマス</td><td>2026-06-09 事務所前・フライ(マラブー#6 オリーブ)= 2026年最大</td><td>公式</td></tr>
+      <tr><td>64.9cm</td><td>ニジマス</td><td>2026-05-23 レストハウス前・エサ</td><td>公式</td></tr>
+      <tr><td>63.7cm</td><td>ニジマス</td><td>2026-05-01 解禁日・ルアー</td><td>公式</td></tr>
+      <tr><td>62.5cm</td><td>ニジマス</td><td>2026-05-03 どうだん</td><td>公式</td></tr>
+      <tr><td>60.7cm</td><td>ニジマス</td><td>2026-06-25 事務所前</td><td>公式</td></tr>
+      <tr><td>60.3cm</td><td>ニジマス</td><td>2026-08-30 レストハウス前</td><td>公式</td></tr>
+      <tr><td>45.2cm</td><td>ホンマス</td><td>2026年ランキング(暫定)最大</td><td>公式</td></tr>
+      <tr><td>37.7cm</td><td>カワマス</td><td>2026年ランキング(暫定)最大</td><td>公式</td></tr>
+      <tr><td>35.6cm</td><td>ヒメマス</td><td>2026年ランキング(暫定)最大</td><td>公式</td></tr>
+    </table></div>
+    <p class="caption warnnote">ヒメマス・カワマス・ホンマスの各最大魚は<b>ランキング表にサイズしか載らず</b>、日付・釣法・場所は未取得。2026年分は暫定値(シーズン継続中)。</p>
+  </div>
+
+  <div class="card">
+    <h3>タックル実例 <span class="tag tag-obs">実測+公式</span></h3>
+    <ul>
+      <li><b>フライ</b>: 岸はダブルハンド12〜15ftの5〜6番スペイが主流、舟ではシングルハンド。<b>マラブー(オリーブ/ブラック)</b>が軸 — 2026年最大65.3cmはマラブー#6オリーブ。状況でミッジ/ピューパ(9/4のホンマス38.0cmはユスリカ#12)、6月以降はテレストリアル/ドライ</li>
+      <li><b>ルアー</b>: スプーン中心。プルーラ5/8/10.5/12/16gで層を刻む、海晴8g(リフト&amp;フォール — フリーフォールで食う)・海晴18g(遠投)、リバーオールド ベスパ系(赤金/チャート/ブラックゼブラ)、ノアB2.6g、パル3.8g、ピュア3.5g黒金、DUOスピアヘッドリュウキ4.5cm。カラーは<b>放流直後=赤系/ピンク系、新緑期=グリーン系</b>、状況でグロー→赤金/ピンク金。実証タックル例: トラウトワンNS S76ML/25アルテグラ2500SHG/PE0.8/フロロ2.5号</li>
+      <li><b>エサ</b>: ブドウ虫(550〜750円)・イクラ(700円)・紅サシ大(400円)。<b>竿は1人2本まで・天ビン1本バリ</b>。サビキ・枝針・撒き餌・寄せ餌・活きた魚は禁止、現地で草木や川虫を採るのも禁止。貸し竿1,500円</li>
+    </ul>
+    <div class="src">出典: 公式(料金・規則・タナ)+とちぎの鱒釣り+現地実釣記録(2024年解禁日の舟エサ釣り、2026年のルアー各記録)+ブンブン釣行記+日光鱒釣研究所(※要SHO確認)</div>
+  </div>
+</div>
+</div><!-- /maingrid -->
+
+<!-- ==================== BOTTOM BANDS ==================== -->
+<div class="band">
+  <h2 class="mincho">一日の実戦手順 <span class="tag tag-fix">確定(公式フロー)+実測</span></h2>
+  <div class="cols3">
+    <div>
+      <div class="step"><span class="stepn">1</span><span><b>前日までに舟を予約</b> — 貸し舟は湯元レストハウス(0288-62-2156)へ電話。公式「舟を予約してから釣り券を購入」。2人乗り3,700円/3人乗り5,000円</span></div>
+      <div class="step"><span class="stepn">2</span><span><b>アクセス・駐車</b> — 清滝ICから26.4km・約40分(沼田ICからは58.3km)。湯元の公共駐車場は無料(有料は湯滝駐車場のみ)。バスなら東武日光駅→湯元温泉 1,950円・約80分(運賃は2026-09-05時点の東武バス掲載値。改定の有無は未確認 — 乗車前に公式運賃表で確認)、最寄は「湖畔前」</span></div>
+    </div>
+    <div>
+      <div class="step"><span class="stepn">3</span><span><b>遊漁券を購入</b> — 買えるのは釣り事務所と赤沼茶屋の2か所のみ。<b>通常期(5/2〜9/30)は釣り事務所6:30-17:00/赤沼茶屋6:00-17:00、解禁日5/1だけは釣り事務所3:00-17:00・赤沼茶屋4:00-17:00</b>(解禁前日4/30は釣り事務所17:00-21:00)。1日券2,600円/午後券2,000円(当日正午から)/小中高生500円。現場売りは1日券のみ+500円(小中高生券+300円)。宿泊者は1日券300円引き/午後券200円引き(解禁日は400円引き・宿泊証明書の提示が必要)。<b>買ったら帽子や肩など見える場所に付ける</b></span></div>
+      <div class="step"><span class="stepn">4</span><span><b>朝の一手</b> — 原則7:00-17:00(岸釣り・湯川は日の出〜日没、解禁日5:00-17:00)。低水温期はタナ1.5〜3m、高水温期は5〜8m、9月は3m前後まで戻る。舟は全員ライフジャケット、エンジン・モーター取付とトローリングは禁止。<b>券の販売開始は6:00(赤沼茶屋)/6:30(釣り事務所)</b> — 日の出がそれより早い時期の入釣可否は公式の明文規定が無く⚠未確認。釣り事務所 0288-62-2524 へ要確認</span></div>
+    </div>
+    <div>
+      <div class="step"><span class="stepn">5</span><span><b>12時前後の放流に合わせる</b> — 土日祝は滝上・事務所前桟橋・砂浜の3か所へ12時前後に成魚放流。赤系・ピンク系ルアーへローテーション</span></div>
+      <div class="step"><span class="stepn">6</span><span><b>納竿・帰路</b> — 17:00終了。持ち帰りは1人20尾まで、15cm以下はリリース。<b>活きた魚の持ち出しは禁止</b> — 締めてから氷(1袋350円)のクーラーで。金精道路は冬期(12/25正午〜4/24正午)閉鎖のためシーズン外は日光側からのみ</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="band">
+  <h2 class="mincho">遊漁券・予約の実務 <span class="tag tag-fix">確定(公式)</span></h2>
+  <div class="cols2">
+    <ul>
+      <li><b>湯ノ湖の一般券が買えるのは2か所だけ</b> — 【湯ノ湖釣り事務所 0288-62-2524】と【赤沼茶屋 0288-55-0150】。<b>湯滝レストハウス(0288-62-8611)は湯川券・小中高生券・回数券のみ</b>で、湯ノ湖券は扱わない — ここを間違えると買い直しになる</li>
+      <li><b>午後券は当日の正午から発売</b>。午前中には買えず、現場売り(監視員)でも取り扱わない — 午後入りなら正午以降に販売所へ</li>
+      <li>販売時間は荒天時などに変動あり。解禁前日4/30は釣り事務所が17:00-21:00に開く</li>
+    </ul>
+    <ul>
+      <li><b>貸し舟は要予約</b>(湯元レストハウス 0288-62-2156)。<span class="warnnote">予約開始日・受付定員・艇数は公式に規定が無く、電話確認が必要</span></li>
+      <li><b>定休日に注意</b> — 2026年8月は8/4・8/17・8/18・8/25、9月は9/1・9/8・9/15・9/24(振替)・9/29が舟の定休日。<b>湖の遊漁自体に休漁日の公表は無い</b>ので、舟が休みでも岸釣りは可能</li>
+      <li>購入した釣魚券は<b>原則払い戻し不可</b>。貸し借り・譲渡・転売も禁止。支払いはカード・交通系電子マネー・QR決済に対応</li>
+    </ul>
+  </div>
+</div>
+
+<div class="band">
+  <h2 class="mincho">位置未特定・未確認事項 <span class="tag tag-gen">実在は確認・確定情報なし</span></h2>
+  <p style="margin:0 0 8px; color:var(--ink2)">以下は記録・公式に登場するが確定できないため<b>地図に描かない/断定しない</b>:</p>
+  <div class="unk">
+    <span>湖面区画14件それぞれの緯度経度 — 公式マップは画像/PDFのみで座標基準点が無い(±50m)</span>
+    <span>「石垣」「枯木」— 岸の地名ラベルで湖面区画ではなく、OSMにも対応地物が無い</span>
+    <span>「湖最深部」「馬の背」の位置 — 公的等深線データが存在しない</span>
+    <span>「兎島北」— 公式の湖面区画14件のリストに無い呼称</span>
+    <span>湯の湖釣り事務所の座標 — OSM/Nominatim未登録(推定±40m)</span>
+    <span>平均水深 — どの出典にも記載なし</span>
+    <span>貸し舟の艇数・通年の出船時刻・欠航の風速基準</span>
+    <span>回数券の金額</span>
+    <span>フック規定(バーブレス/シングル/本数)・テンカラの可否</span>
+    <span>水位の定量記録・結氷日</span>
+    <span>携帯電波の実測状況</span>
+    <span>2026年9月のクマ目撃件数(集計は8月まで)</span>
+    <span>月別放流の魚種内訳</span>
+    <span>2026年のヒメマス・カワマス・ホンマス各最大魚の日付・釣法・場所</span>
+    <span>2027年度の解禁日・料金 — 翌年発表の慣行のため未公表</span>
+    <span>いろは坂2026年秋の交通規制 — 採掘時点で未発表</span>
+  </div>
+</div>
+
+<div class="band">
+  <h2 class="mincho">アクセス・安全 <span class="tag tag-fix">確定+実測</span></h2>
+  <div class="cols3">
+    <ul>
+      <li>日光宇都宮道路 <b>清滝ICから26.4km・約40分</b>。関越道 沼田ICからは58.3km(金精道路経由)</li>
+      <li><b>金精道路(国道120号)は冬期閉鎖</b> — 群馬県告知の逐語「令和7年12月25日（木曜日）正午から令和8年4月24日（金曜日）正午まで」。日光湯元ビジターセンターも「毎年12月25日正午〜4月24日正午」と案内。冬季は冬用タイヤの装着が要請される</li>
+      <li>湯元の公共駐車場は複数あり<b>無料</b>(有料は湯滝駐車場のみ)。湖畔駐車場は冬季積雪時は利用不可。<span class="warnnote">収容台数はOSMのcapacityタグに滝上駐車場(5台)の記載があるのみ(2026-09採掘時点・現地標識との一致は未確認)</span></li>
+      <li>東武バス 東武日光駅→湯元温泉 <b>1,950円・約80分</b>(フリーパス3,000円)。<span class="warnnote">運賃は2026-09-05時点の掲載値で改定の有無は未確認 — 乗車前に公式運賃表で確認</span>。最寄バス停は「湖畔前」、終点は「湯元温泉」、滝上へは「湯滝入口」</li>
+    </ul>
+    <ul>
+      <li>気象庁 奥日光アメダス(41166・標高1292m)の平年値: 5月の月平均気温10.3℃・9月15.2℃、平均風速2.3〜2.9m/s、7月の霧日数17.0日。<span class="warnnote">アメダスは湖面(約1,475m)より183m低く、湖畔の実気温はこれより低い</span></li>
+      <li>2026年8月の実測: 8/11 最大瞬間風速<b>24.5m/s</b>、8/12 降水量<b>163.0mm</b>、8/25 最高気温29.2℃ — <b>雷・強風時は即中止</b>(公式「雷が近づいた際は、釣りを中止し、車内など安全な場所へ避難してください」)</li>
+      <li>解禁直後の冷え込み: 2026-05-05は気温2.6℃・前夜降雪で滝上の水温5.8℃、5/10も気温2.5℃ — <b>5月上旬は防寒必須</b></li>
+      <li>台風通過時も公式記録は「増水はなくやや緑っぽい濁り」— 滞留時間約30日の湖で増水は起きにくい</li>
+    </ul>
+    <ul>
+      <li><b>クマ</b>: 日光湯元ビジターセンター集計の2026年目撃件数は 5月4件/6月17件/7月14件/<b>8月21件</b>。2026-07-27に湯ノ湖の湖尻対岸、2026-08-18には<b>湯滝落ち口で2〜3m先</b>にクマ(「魚を捕まえて食べていた」)。単独の早朝入釣を避け、鈴等で存在を知らせ、当日情報をビジターセンターで確認</li>
+      <li><b>立入禁止区域と区域境界</b>: 一の橋・二の橋から湯滝の流れ出しまでは立入禁止。湯滝下から竜頭の滝上までは湯川区域で<b>別券・C&amp;R・竿1本・ビク/クーラー持込禁止</b> — 滝上から下る導線で越境しやすい</li>
+      <li><b>水草抑制実験区画(2026/7/16〜9/10・終末処理場前)</b>: 水中に回転稼働する機器、陸上にバッテリー付き制御装置があり<b>感電・絡みの危険</b>。区画内および周辺へのルアー・釣り針投入、船での接近・接触、制御装置やケーブルへの接触はすべて禁止</li>
+      <li>ドローンは日光湯元では<b>事前問合せが必要</b>(0288-54-1076)。ラムサール条約湿地・日光国立公園内</li>
+      <li class="warnnote">落水・低体温症に関する公式の注意文言は採掘結果に無い — 舟のライフジャケットは全員着用が義務</li>
+    </ul>
+  </div>
+</div>
+
+<div class="honest">
+  <b>この図が「作らなかった」もの(正直性の宣言)</b> — ①<b>等深線</b>: 国土地理院の湖沼調査対象湖に湯ノ湖は含まれず、公的な等深線データが存在しない。公式フィールドマップには2〜12mの等深線表記が<b>存在するが、本図には転載しない</b>(著作・精度)。②<b>湖面区画14件の緯度経度</b>: 公式マップは画像/PDFのみで座標基準点が無く、OSMにも対応地物が無い。番号ポイントの位置はすべて相対位置からの推定(公式マップ上の相対位置で±50m級)で、地図の円は区画(面)の代表点を湖側に置いたものにすぎず、根拠にした地物(建物・島)から100m以上離れる円もある。釣り事務所の座標も未登録のため推定(±40m)。③<b>平均水深</b>: いずれの出典にも記載が無いため空欄のまま。推定値を置かない。④<b>フック規定(バーブレス/シングル/本数)・テンカラの可否</b>: 公式規則に該当条項を見つけられず記載しない。エレキも名指しの条文が無く、「モーター」に文言上該当すると読めるにとどまるため断定しない。⑤<b>立入禁止区域の境界呼称は公式内部で割れている</b> — 区域ページ「一の橋・二の橋から湯滝の流れ出しまでは立入り禁止区域です。」/2026年遊漁ガイドPDF「湯ノ湖：全域。ただし、湖尻橋下流端から湯滝までは立入禁止。」。どちらかを正とはせず両論を残した(実務上は「橋より湯滝側へ入らない」で両方に適合)。⑥<b>9月中旬以降の水温・釣況</b>: 本図作成時点(2026-09-05)で公式未公開。直近の実測は9/4の滝上17.4℃までで、その先は2024年の同時期(滝上・朝で16.2〜19.7℃)と9月放流1,230kgからの推定にとどまる。⑦<b>ブラウントラウト・イワナ</b>: 二次記事の列挙のみで公式の対象魚8種にも2026年の釣果にも現れないため、生息を断定しない。⑧<b>水位の定量記録・結氷の具体日・携帯電波の実測・2026年9月のクマ目撃件数</b>は採掘結果に無く、作らない — クマは出発前にビジターセンターの当日情報を必ず確認すること。⑨<b>貸し舟の艇数・通年の出船時刻・欠航基準</b>は公表資料に無く断定しない。確定値として載せたのは2026年8月・9月の月別カレンダーのみ。⑩<b>放流量は公式が公表する月別のkg数(予定を含む)</b>であって、実際の放流尾数・魚体サイズの実績ではない。⑪本図の一次出典URLは <b>/nikko/fishing/ 配下</b>(2026-09-05にHTTP 200を実測)。Web上に残る /nikko/regulations.html 等は404で、そちらを引く二次情報は古い。⑫<b>釣り事務所の「開設期間」も公式内部で割れている</b> — 公式トップページ「4/1〜9/30」/2026年 遊漁ガイドPDF「4/1〜10/15」。どちらかを正とはせず両論を残した(湖の遊漁期間5/1〜9/30とは別の数値なので混同しない)。⑬<b>冬季の全面結氷</b>は裏取り1系統の一般論としてのみ記載し、結氷日・結氷期間は作らない。
+</div>
+
+<footer>
+  <b>出典</b> — 規則・料金・区域・釣り舟・2026年シーズン: 全国内水面漁業協同組合連合会 日光支所 公式(<a href="https://www.naisuimen.or.jp/nikko/" rel="noopener">naisuimen.or.jp/nikko/</a>、fishing/fee.html・fishing/regulations.html・fishing/boat.html・fishing/area.html・fishing/festa.html、いずれも2026-09-05取得・逐語照合)/日々の釣況・岸水温・釣果: <a href="https://www.naisuimen.or.jp/nikko/info/field-info/index-yunoko.html" rel="noopener">同 湯ノ湖フィールド情報</a>/湖面区画・岸の地名・海抜1475m: 同 フィールドマップ(fishing/field/yunoko-p1.pdf)/2026年9月 釣り舟営業カレンダー(index/2026/20260905122748_rotated.pdf)・水草抑制実験のご案内(index/2026/2026experiment.pdf、岡山大学農学部・株式会社テクアノーツ)・2026年 遊漁ガイド(index/2026/2026guide.pdf)/湖心の鉛直水温・DO・透明度・標高・面積: 栃木県 水質年表・環境白書/気温・風速・降水: 気象庁 奥日光アメダス(41166)/クマ目撃・道路・駐車場: 環境省 日光湯元ビジターセンター・環境省ライブカメラ(camera_no=81)/運賃: 東武バス 日光エリア(2026-09-05時点で運賃1,950円表記・改定告知なしを実測)/金精道路の冬期閉鎖: 群馬県・栃木県 道路情報/季節別の釣り方: とちぎの鱒釣り/岸の傾向: 日光鱒釣研究所(※要SHO確認)/ウェーディング・ルアーローテーション: ブンブン釣行記/過去年の料金・解禁日の確認: Internet Archive Wayback Machine/汀線・面積・距離・施設位置: © OpenStreetMap contributors(ODbL、relation 10415494)による実測。
+  <br>姉妹編(5湖): <a href="https://oatbox99.github.io/marunuma-map/" rel="noopener">丸沼 一枚攻略図</a> / <a href="https://oatbox99.github.io/ojirinuma-map/" rel="noopener">大尻沼 一枚攻略図</a> / <a href="https://oatbox99.github.io/sugenuma-map/" rel="noopener">菅沼 一枚攻略図</a> / <a href="https://oatbox99.github.io/chuzenjiko-map/" rel="noopener">中禅寺湖 一枚攻略図</a>。<span class="warnnote">⚠ 丸沼・菅沼は 2026-09-06 07:58 に HTTP 200 を実測。<b>大尻沼・中禅寺湖は本プロジェクトで 2026-09-06 に公開するページで、公開直後に HTTP 200 とバイト一致を検証する</b> — 未検証のうちはリンクが開かないことがある。</span>2026-09-05作成。主要ファクトは多エージェント採掘+3レンズ(fidelity/regulation/complete)の敵対検証と公式原文の逐語照合を経ている。裏取りが1系統のもの・要確認のものは本文中に明示した。
+</footer>
+</div>
+
+<script>
+(function(){
+'use strict';
+var LAKE_D = "M293.4,274.1L301.5,275.0L326.8,286.7L338.1,287.7L355.9,284.8L368.7,280.4L376.7,267.2L383.5,250.3L385.0,231.6L383.6,194.5L391.5,184.4L400.7,178.4L434.4,143.1L443.0,136.2L451.4,133.0L488.1,128.0L505.2,116.1L509.8,120.9L526.3,118.1L532.0,119.9L537.3,118.5L542.2,114.0L544.3,101.0L549.0,99.4L553.0,105.4L561.2,107.3L568.5,106.6L576.1,100.1L578.2,93.4L588.9,85.1L589.5,81.4L594.6,79.9L594.4,67.4L605.0,62.2L607.3,54.2L611.8,51.5L628.8,47.7L635.6,50.3L643.3,40.0L654.1,46.2L659.4,54.5L667.2,75.5L657.4,122.9L619.2,148.6L612.2,157.8L608.2,169.7L596.5,187.0L593.9,200.4L595.4,211.2L605.8,224.0L596.8,231.3L587.0,231.0L577.2,238.6L574.0,250.8L574.9,263.2L596.8,299.3L596.2,311.8L584.4,315.4L566.1,314.8L554.7,308.6L542.3,284.0L521.4,268.1L508.9,270.1L492.3,277.2L488.4,290.4L497.6,300.9L498.1,310.3L492.2,319.8L497.4,328.8L497.7,333.8L493.6,336.6L487.3,337.2L487.6,342.3L495.3,345.1L491.9,352.5L493.1,360.5L498.5,364.1L496.1,374.1L499.4,385.5L491.7,400.9L514.7,498.1L521.4,516.0L536.7,532.0L543.6,546.7L549.0,564.3L558.5,575.1L571.7,586.0L579.4,587.3L588.3,583.8L592.3,577.4L580.2,536.5L584.3,531.5L577.8,510.8L579.5,503.8L601.8,479.5L599.5,456.2L613.5,450.2L621.3,451.3L630.2,448.4L640.8,451.7L652.3,446.7L679.7,443.4L685.1,440.6L699.6,443.2L712.6,453.3L716.0,467.5L715.0,494.2L711.4,499.5L713.5,522.7L722.6,559.9L733.7,564.4L732.9,574.6L722.9,579.7L725.6,586.6L732.5,592.3L753.9,594.4L758.4,598.5L758.6,605.5L770.7,623.3L771.9,632.7L767.2,640.0L780.5,656.3L782.8,678.6L790.2,692.0L781.4,697.6L785.2,714.8L783.4,724.8L784.8,744.4L794.1,755.5L805.2,763.2L819.2,769.8L837.5,767.4L848.9,775.8L857.4,794.4L861.4,808.6L863.1,831.0L872.9,836.2L881.5,852.7L887.3,879.3L900.4,893.6L907.1,910.6L915.4,915.0L918.3,931.7L914.4,938.7L920.0,953.2L913.4,996.5L883.7,1041.8L867.7,1060.6L867.0,1069.9L845.0,1073.2L838.2,1067.8L824.0,1068.4L812.1,1065.8L791.5,1050.1L779.2,1052.9L774.0,1060.8L774.7,1075.0L771.7,1075.6L752.0,1056.2L715.3,1040.8L685.8,1038.3L678.9,1041.0L685.2,1052.3L691.5,1055.0L694.7,1061.8L686.5,1072.8L677.3,1080.6L641.4,1092.5L611.8,1095.6L568.8,1083.9L547.1,1072.6L493.8,1058.6L471.6,1044.7L439.6,1013.1L418.6,996.2L403.1,954.0L409.5,938.5L402.9,921.8L396.8,877.3L380.5,852.2L270.2,797.2L258.8,783.8L235.3,775.1L212.0,761.5L204.6,737.8L202.2,721.8L211.4,696.4L211.2,676.0L206.2,663.2L208.9,633.1L224.6,589.5L240.1,571.7L246.2,557.6L248.0,549.2L243.6,533.0L236.5,524.8L225.1,517.6L147.3,497.0L105.2,479.0L73.3,461.5L47.4,442.5L42.0,433.9L40.0,423.3L42.3,413.1L49.0,398.5L62.4,381.0L79.6,366.4L96.5,357.9L122.3,355.3L135.5,347.1L143.4,334.8L152.5,328.2L167.8,323.2L173.9,325.0L177.7,321.1L180.5,314.2L199.0,301.7L208.0,305.1L218.1,303.3L225.5,298.9L233.7,297.9L246.1,300.2L253.6,299.0L265.6,284.8L289.4,274.2L293.4,274.1Z";
+document.getElementById('lakepath').setAttribute('d', LAKE_D);
+document.getElementById('lakepath2').setAttribute('d', LAKE_D);
+
+var PN={1:'事務所前(桟橋)',2:'レストハウス前',3:'砂浜〜白根沢',4:'終末処理場前',5:'清水',6:'ヒノキ前(どうだん)',7:'一本杭',8:'白ぶな・三ツ岩・馬の背',9:'滝上',10:'東岸(兎島西・金精口・兎島南・白樺)'};
+/* チップに出す規則注記(公式規則の要点。全文はポイント一覧・レギュレーション参照) */
+var PCAU={9:'橋より湯滝側は立入禁止/2026-08-18 湯滝落ち口でクマ目撃',10:'木道の上からは投げない'};
+/* 水草抑制実験の禁止は「区画内 および 周辺」に及ぶ(公式チラシ)。4=区画そのもの、3=砂浜(区画の隣)。
+   期間(RESTRICT)内だけ強い文言にし、4は期間外でも恒久の注記を返す */
+function mdOverlap(f1,t1,f2,t2){ var a=f1[0]*100+f1[1], b=t1[0]*100+t1[1], c=f2[0]*100+f2[1], e=t2[0]*100+t2[1]; if(a>b) return c<=b||a<=e; return a<=e&&c<=b; }
+/* 選択中の時期チップ(state.phase)の期間が実験区画の制限期間と重なれば制限中として扱う。未選択時は今日の日付で判定 */
+function restrictActive(){ var p=(typeof state!=='undefined')&&state.phase; if(p&&!p.closed&&p.from&&p.to) return mdOverlap(p.from,p.to,RESTRICT.from,RESTRICT.to); var n=new Date(); return inRange(n.getMonth()+1,n.getDate(),RESTRICT.from,RESTRICT.to); }
+function pcau(n){
+  if(n===4) return restrictActive()?'実験区画そのもの — 投入・接近禁止(7/16〜9/10)':'実験区画(7/16〜9/10は投入・接近禁止)';
+  if(n===3&&restrictActive()) return '実験区画(終末処理場前)の隣 — 区画内・周辺へ投げない';
+  return PCAU[n]||'';
+}
+/* エサのエリアは digest に時期別の一次資料が無いため、時期で変えない固定セット:
+   公式の放流箇所3か所(9滝上/1事務所前桟橋/3砂浜)+日付つきのエサ実績があるレストハウス前(2) */
+var BAIT_PTS=[9,1,3,2];
+var NPT=10;
+var YEAR=2026;
+
+/* 公式シーズン(kind=open のみ)。禁漁期は SEASONS に入れない = 期間外扱い */
+var SEASONS=[
+ {label:'解禁日',from:[5,1],to:[5,1],note:'午前5時〜午後5時。解禁フェスタ開催。1日券3,600円(午後券の設定なし)',
+  tickets:'<b>解禁日は券の販売時間が違う</b> — 湯ノ湖釣り事務所は<b>3:00〜17:00</b>、赤沼茶屋は<b>4:00〜17:00</b>(解禁前日4/30は釣り事務所が17:00〜21:00)。この2か所のみで、湯滝レストハウスでは湯ノ湖券を買えない。'},
+ {label:'通常期',from:[5,2],to:[9,30],note:'原則毎日。1日券2,600円/午後券2,000円(当日正午から発売)。釣魚時間は原則7:00〜17:00(岸釣りは日の出〜日没)',
+  tickets:'遊漁券は<b>湯ノ湖釣り事務所(6:30〜17:00)</b>と<b>赤沼茶屋(6:00〜17:00)</b>の2か所のみ。湯滝レストハウスでは湯ノ湖券を買えない。'}
+];
+/* 一部区画の利用制限(営業窓ではない) */
+var RESTRICT={label:'水草抑制実験区画',from:[7,16],to:[9,10],where:'終末処理場前エリア(休暇村日光湯元 前)',note:'区画内および周辺へのルアー・釣り針の投入、船での接近・接触が禁止。初日(7/16)と最終日(9/10)は潜水作業のため立入制限'};
+/* 貸し舟(湖の遊漁ではなく舟だけの定休日) */
+var BOAT_CLOSED=[[8,4],[8,17],[8,18],[8,25],[9,1],[9,8],[9,15],[9,24],[9,29]];
+/* full=公式カレンダーで平日でも7:00-17:00になる連休レンジ(日の範囲) */
+var BOAT_HOURS={
+ 8:{rule:'土日および8/11-15は7:00-17:00、平日は9:00-15:30',full:[[11,15]],hFull:'7:00〜17:00',hWeek:'9:00〜15:30'},
+ 9:{rule:'土日および9/20-9/23は7:00-17:00、平日は9:00-15:30',full:[[20,23]],hFull:'7:00〜17:00',hWeek:'9:00〜15:30'}
+};
+function boatFullDay(m,d){
+  var b=BOAT_HOURS[m]; if(!b) return false;
+  return b.full.some(function(r){return d>=r[0]&&d<=r[1];});
+}
+
+var PHASES=[
+ {id:'off',chip:'禁漁(シーズンオフ)',from:[10,1],to:[4,30],closed:true,
+  name:'シーズンオフ(禁漁期)',
+  msg:'湯ノ湖は10/1〜4/30が禁漁。翌年の解禁日・料金は前年度末〜春先に公式サイトで発表される慣行(2026年分は料金改定を伴って発表され、2019〜2025年は据置だった)。金精道路(国道120号)は「令和7年12月25日（木曜日）正午から令和8年4月24日（金曜日）正午まで」冬期閉鎖で、冬用タイヤ要請あり・湖畔駐車場は積雪時利用不可。冬季は北岸の温泉流入部を除き全面結氷することがある(一般論・裏取り1系統で、結氷の具体日は未確認)。参考: 2026-04-22の解禁前資源調査では87尾を確認(岸水温8.2℃)。'},
+ {id:'p1',chip:'解禁・冷水(5/1〜5/17)',from:[5,1],to:[5,17],
+  name:'解禁〜5月中旬(低水温・放流直後)',temps:'岸実測 5.8℃(5/5 滝上・朝、前夜降雪・気温2.6℃)。湖心は5/16に表層13.5℃・10m 10.6℃で上下差3℃弱。※この期間内の岸の最高値は代表抽出に無い(全351件は採掘元の water_records に収録)',
+  tana:'1.5〜3m',tanaNote:'公式「６月頃まではタナが１．５〜３ｍですが、夏には５ｍ以上」。5月のブドウ虫エサ釣りはタナ1.5〜2.5mの実釣記録',
+  flyPts:[1,2,9],lurePts:[1,2,3,9],
+  fly:['マラブー(オリーブ/ブラック) #6','ダブルハンド12〜15ft 5〜6番のスペイでの引き','シンキングラインでのカウントダウン'],
+  lure:['赤系・ピンク系スプーン(放流直後に反応)','プルーラ5〜12gのローテーション','海晴18gの遠投'],
+  bait:['ブドウ虫(タナ1.5〜2.5m)','イクラ','天ビン仕掛け1本バリ(竿は1人2本まで)'],
+  records:['2026-05-01 ニジマス63.7cm ルアー','2026-05-03 どうだん ニジマス62.5cm','2026-05-23 レストハウス前 ニジマス64.9cm エサ','2024-05-01 解禁フェスタ 72cm(フィガーNTS デジ巻き)','2024年解禁日の舟エサ釣り: 竿2本・天ビン1本バリ・イクラ+ブドウ虫・タナ5mで32cm×3'],
+  warn:'解禁直後は朝の冷え込みが厳しい(2026-05-05 気温2.6℃・前夜降雪、5/10 2.5℃)。防寒必須。解禁日は午前5時開始・1日券3,600円で午後券の設定なし'},
+ {id:'p2',chip:'新緑・ライズ(5/18〜6/30)',from:[5,18],to:[6,30],
+  name:'5月下旬〜6月(新緑・虫パターン)',temps:'湖心 6/13 表層15.1℃/10m 11.1℃。岸は5月下旬に上昇し 5/29 滝上・朝で16.5℃(2026年5月の滝上・朝の最高)',
+  tana:'1.5〜3m',tanaNote:'公式の「６月頃まではタナが１．５〜３ｍ」に該当。ホンマスは「ヒメマスより少し上のタナ」',
+  flyPts:[1,2,9,10],lurePts:[1,2,3,6],
+  fly:['マラブー #6 オリーブ(2026年最大65.3cmの実績)','テレストリアル(陸生昆虫)パターン','ドライフライ'],
+  lure:['新緑の季節はグリーン系カラー','ノアB2.6g 青銀(6/11に54.0cm、同日の赤金は無反応)','リバーオールド ベスパ系(赤金/チャート/ブラックゼブラ)'],
+  bait:['ブドウ虫','イクラ'],
+  records:['2026-06-09 事務所前 ニジマス65.3cm フライ(マラブー#6オリーブ) — 2026年最大','2026-06-11 ノアB2.6g青銀で54.0cm、赤金は無反応','2026-06-25 事務所前 ニジマス60.7cm','2026-06-24 ヒメマス稚魚3万尾・ホンマス稚魚1万尾を放流'],
+  warn:'6月は放流量が640kgと5月(1,460kg)の半分以下。放流依存の釣りは効きにくくなる'},
+ {id:'p3',chip:'高水温・深場(7/1〜8/15)',from:[7,1],to:[8,15],
+  name:'7月〜8月中旬(高水温・タナが深い)',temps:'湖心 7/12 表層18.9℃・8/2 表層23.5℃(2mも23.5℃、4mで18.8℃へ急落)。岸は7/25に23.7℃(砂浜・昼)、2025-08-03に23.8℃(滝上)',
+  tana:'5〜8m',tanaNote:'公式「夏には５ｍ以上」。7月のヒメマスは5〜6.5m、6m以深を狙うなら岸より舟が有利。躍層は3〜6m',
+  flyPts:[1,9],lurePts:[1,2,9],
+  fly:['シングルハンドでの深いカウントダウン(舟)','マラブー(オリーブ/ブラック)','ミッジ/ピューパ'],
+  lure:['海晴8gのリフト&フォール(フリーフォールで食う)','グロー系から赤金/ピンク金へのローテーション(7/20の実績)','プルーラ5/8/10.5/12/16gで層を刻む'],
+  bait:['ブドウ虫','イクラ','紅サシ'],
+  records:['2026-07-24 水温20℃超、氷1袋350円','2026-07-20 グロー→赤金/ピンク金へローテで反応','2026-08-02 湖心表層23.5℃(2mまで同温、4mで18.8℃)'],
+  warn:'表層水温が20℃を超え魚は深場へ。朝夕の短時間勝負になりやすい。2023-08-04には底層DOが2.0mg/Lまで低下した記録があり、深すぎる層は酸素が薄い。雷・強風時は即中止(8/11に最大瞬間24.5m/s、8/12に降水163.0mm)。舟の平日営業は9:00-15:30(2026年8月・9月の公式カレンダー実績。7月分のカレンダーは本図に未収録 — 0288-62-2156 へ要確認)のため、平日は朝夕の時合に出船できない — 朝夕の深場狙いは土日(7:00-17:00)が基本で、平日朝夕は岸釣りで対応する。ただし公式カレンダーの連休例外(8/11〜8/15)は平日でも7:00-17:00。岸釣り・湯川は日の出から可だが、湯ノ湖券の販売開始は6:00(赤沼茶屋)/6:30(釣り事務所)で、それより早い時間の入釣可否は公式の明文規定が無く未確認 — 釣り事務所 0288-62-2524 へ要確認。7〜8月はクマ目撃が最多(日光湯元ビジターセンター集計 2026年 7月14件/8月21件。8/18には湯滝落ち口で2〜3m先に目撃) — 単独の早朝入釣を避け、鈴等で存在を知らせ、当日情報を日光湯元ビジターセンターで確認。7/16〜9/10は終末処理場前の水草抑制実験区画(ポイント4)とその周辺へルアー・釣り針の投入、船での接近・接触が禁止'},
+ {id:'p4',chip:'婚姻色・終盤(8/16〜9/30)',from:[8,16],to:[9,30],
+  name:'8月下旬〜9月(水温低下・婚姻色)',temps:'湖心 8/30 表層17.9℃(8/2から約6℃低下)。岸は8/29 滝上・朝17.1℃、9/4 滝上6:20に17.4℃。2024年9月の滝上・朝は16.2〜19.7℃',
+  tana:'5m前後から徐々に浅く',tanaNote:'夏の5m以上から表層寄りへ戻る過程。2026-09-04にはレストハウス前の船釣りでタナ3m(ブドウ虫)の実績があり、9月に入ると3m前後まで浅くなる。8/30の湖心プロファイルは4m 14.4℃',
+  flyPts:[1,2,9],lurePts:[2,9,3],
+  fly:['マラブー(オリーブ/ブラック)','秋の虫(テレストリアル)パターン','ミッジ/ピューパ'],
+  lure:['パル3.8g(8月下旬の婚姻色個体に実績)','DUOスピアヘッドリュウキ4.5cm 赤/ピンク(2024年9月 滝上)','ピュア3.5g 黒金のグリグリジャーク(秋の虫パターン)'],
+  bait:['ブドウ虫','イクラ'],
+  records:['2026-08-28 海晴8gリフト&フォール(フリーフォール優位)でヒメマス34.9cmほか9尾','2026-08-30 レストハウス前 ニジマス60.3cm','2026-09-04 レストハウス前・船 フライ(ユスリカ#12)で婚姻色のホンマス38.0cm、ほかホンマス2/ヒメマス2/ニジマス6尾','2026-09-04 レストハウス前・船 ブドウ虫でタナ3mを狙いヒメマス30.7cm、ほかホンマス3/ニジマス2/ヒメマス1尾','2026-09-04 滝上の岸水温 6:20に17.4℃','2024年9月 滝上で婚姻色の個体'],
+  warn:'9月の貸し舟は平日9:00-15:30/土日および9/20-9/23は7:00-17:00、定休は9/1・8・15・24・29 — 定休日に予約・来訪しないこと。9月上旬までは公式に日々の釣況・水温が出ている(9/4=滝上17.4℃)が、中旬以降は本図作成時点(2026-09-05)で未公開のため、その先は2024年9月の滝上・朝の水温(16.2〜19.7℃)と9月放流1,230kgからの推定にとどまる。自然産卵は9月末〜10月上旬(白根沢・湖内)。8月はクマ目撃が最多(日光湯元ビジターセンター集計 2026年 8月21件/7月14件。8/18には湯滝落ち口で2〜3m先に目撃) — 単独の早朝入釣を避け、鈴等で存在を知らせ、当日情報を日光湯元ビジターセンターで確認。7/16〜9/10は終末処理場前の水草抑制実験区画(ポイント4)とその周辺へルアー・釣り針の投入、船での接近・接触が禁止'}
+];
+var WINDS=[
+ {id:'c1',label:'放流直後(土日祝の12時前後)',advice:'放流箇所の滝上・事務所前桟橋・砂浜(レストハウス横)を狙う。ルアーは赤系・ピンク系が効く。滝上は一の橋・二の橋より湖側のみ — 橋から湯滝側は立入禁止。',ev:'公式「放流箇所は、滝上（湯滝の流れ出し付近）、事務所前の桟橋、砂浜（レストハウス横）の3か所です。放流時間は12時前後」/放流日「毎週、土、日、祝日」'},
+ {id:'c2',label:'強風',advice:'貸し舟は出船停止になる。岸釣りへ切り替える前提で計画する。',ev:'2026年に強風で終日出船停止が少なくとも3日(5/29ほか)。奥日光の平年風速は2.3〜2.9m/s'},
+ {id:'c3',label:'雷',advice:'即中止して車内など安全な場所へ避難。',ev:'公式「雷が近づいた際は、釣りを中止し、車内など安全な場所へ避難してください」。7月の霧日数は平年17.0日'},
+ {id:'c4',label:'表層20℃超の高水温',advice:'タナを5〜8mへ下げる。6m以深を通すなら舟が有利だが、舟の平日営業は9:00-15:30(2026年8月・9月の公式カレンダー実績。7月分は本図に未収録 — 0288-62-2156 へ要確認)で朝夕に出船できない — 朝夕の深場狙いは土日(7:00-17:00)が基本、平日の朝夕は岸釣りで対応する。ただし公式カレンダーの連休例外(8/11〜8/15・9/20〜9/23)は平日でも7:00-17:00。なお岸釣りは日の出から可だが湯ノ湖券の販売開始は6:00(赤沼茶屋)/6:30(釣り事務所)で、それ以前の入釣可否は未確認 — 釣り事務所 0288-62-2524 へ要確認。',ev:'公式「夏には５ｍ以上」/7月のヒメマスは5〜6.5m/2026-08-02 湖心表層23.5℃/貸し舟カレンダー(2026年8月=土日および8/11-15は7:00-17:00・平日9:00-15:30、2026年9月=土日および9/20-9/23は7:00-17:00・平日9:00-15:30)'},
+ {id:'c5',label:'解禁直後の冷え込み',advice:'防寒装備を厚めに。朝は水温6℃前後まで下がる。',ev:'2026-05-05 気温2.6℃・前夜降雪で滝上の水温5.8℃、5/10 気温2.5℃'},
+ {id:'c6',label:'クマ目撃情報あり',advice:'単独の早朝入釣を避け、鈴等で存在を知らせる。ビジターセンターの目撃情報を当日確認。',ev:'日光湯元ビジターセンター 2026年目撃件数 5月4件/6月17件/7月14件/8月21件。7/27 湯ノ湖湖尻対岸、8/18 湯滝落ち口で2〜3m先「魚を捕まえて食べていた」'},
+ {id:'c7',label:'濁り(台風後など)',advice:'増水は起きにくい。やや緑色の濁りにとどまるため釣行中止の判断材料にはなりにくい。',ev:'台風時の公式記録「増水はなくやや緑っぽい濁り」。滞留時間約30日'},
+ {id:'c8',label:'水草抑制実験(7/16〜9/10)',advice:'終末処理場前エリア(休暇村日光湯元 前)は釣りエリアの一部利用制限区画。オレンジのフロートで囲まれた区画内および周辺へルアー・釣り針を投げ込まない、船で近づき接触・移動させない、石やゴミを投げ込まない、制御装置やケーブルに触れない。水中に回転稼働する機器、陸上にバッテリー付き制御装置があり感電・絡みの危険。初日(7/16)と最終日(9/10)は潜水作業のため立入制限。期間中はこの区画を釣り場の候補から外す。',ev:'公式チラシ「水草抑制実験に伴う一部区画利用制限のご案内」(岡山大学農学部・株式会社テクアノーツ、2026年7月16日〜9月10日、【終末処理場前エリア】/休暇村日光湯元 前)'}
+];
+
+var state={phase:null,style:'fly'};
+var qs=new URLSearchParams(location.search);
+var MD=[0,31,28,31,30,31,30,31,31,30,31,30,31];
+var WD=['日','月','火','水','木','金','土'];
+
+function inRange(m,d,from,to){
+  var v=m*100+d, a=from[0]*100+from[1], b=to[0]*100+to[1];
+  return a<=b ? (v>=a&&v<=b) : (v>=a||v<=b);
+}
+function phaseForToday(){
+  var now=new Date(), m=now.getMonth()+1, d=now.getDate();
+  for(var i=1;i<PHASES.length;i++){ if(inRange(m,d,PHASES[i].from,PHASES[i].to)) return PHASES[i]; }
+  return PHASES[0];
+}
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+function li(a){return a.map(function(x){return '<li>'+esc(x)+'</li>';}).join('');}
+
+function seasonFor(m,d){
+  for(var i=0;i<SEASONS.length;i++){ if(inRange(m,d,SEASONS[i].from,SEASONS[i].to)) return SEASONS[i]; }
+  return null;
+}
+function isOpen(y,m,d){
+  if(y!==YEAR) return false;
+  return seasonFor(m,d)!==null;
+}
+function boatClosed(m,d){
+  return BOAT_CLOSED.some(function(o){return o[0]===m&&o[1]===d;});
+}
+function nextOpenDate(from){
+  var s=new Date(YEAR,SEASONS[0].from[0]-1,SEASONS[0].from[1]);
+  return (s>=from)?s:null;
+}
+function renderOpenState(){
+  var now=new Date();
+  var today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+  var m=now.getMonth()+1, d=now.getDate();
+  var el=document.getElementById('openstate');
+  var html='';
+  if(now.getFullYear()!==YEAR){
+    html='<span class="openbadge is-unknown">'+now.getFullYear()+'年の遊漁日程・料金は本図に無い(本図は'+YEAR+'年版)</span>'+
+      '<p class="nextopen">'+YEAR+'年は5/1〜9/30が遊漁期間、10/1〜4/30が禁漁だった。翌年の解禁日・料金は前年度末〜春先に公式サイトで発表される慣行のため、当年の可否は必ず公式で確認 → <a href="https://www.naisuimen.or.jp/nikko/" rel="noopener" style="color:var(--gold)">naisuimen.or.jp/nikko/</a></p>';
+    el.innerHTML=html;
+    return;
+  }
+  if(isOpen(now.getFullYear(),m,d)){
+    var s=seasonFor(m,d);
+    html+='<span class="openbadge is-open">◎ 本日('+m+'/'+d+')は2026年の遊漁期間内 — '+esc(s.label)+'</span>';
+    html+='<p class="nextopen">'+esc(s.note)+'</p>';
+    /* s.tickets は SEASONS 定数内の固定HTML(<b>のみ)で digest 由来の自由文ではないため esc() を通さない */
+    html+='<p class="nextopen">'+s.tickets+'買ったら帽子や肩など<b>遠くからも見える場所に付ける</b>(公式規則)。</p>';
+    var bh=BOAT_HOURS[m];
+    if(boatClosed(m,d)){
+      html+='<p class="nextopen">🚣 <b>本日は貸し舟の定休日</b>(2026年'+m+'月の公式カレンダー)。湖の遊漁自体に休漁日の公表は無いので、岸釣りは可能。</p>';
+    } else if(bh){
+      var wk=new Date(YEAR,m-1,d).getDay();
+      var isFull=(wk===0||wk===6)||boatFullDay(m,d);
+      var span=isFull?((wk===0||wk===6)?'土日='+bh.hFull:'連休扱い(公式カレンダー)='+bh.hFull):'平日='+bh.hWeek;
+      html+='<p class="nextopen">🚣 貸し舟(2026年'+m+'月): '+esc(bh.rule)+' → <b>本日は'+esc(span)+'の見込み</b>。要予約 0288-62-2156(利用時間・定休日は公式が電話確認を案内)。</p>';
+    } else {
+      html+='<p class="nextopen">🚣 貸し舟は月別カレンダー制。'+m+'月分のカレンダーは本図に未収録 — 0288-62-2156 へ確認。</p>';
+    }
+    if(inRange(m,d,RESTRICT.from,RESTRICT.to)){
+      html+='<p class="nextopen"><span class="warnnote">⚠ '+esc(RESTRICT.label)+'の期間中(7/16〜9/10)</span> — '+esc(RESTRICT.where)+'は一部区画の利用制限。'+esc(RESTRICT.note)+'</p>';
+    }
+  } else {
+    var nx=nextOpenDate(today);
+    var nxTxt;
+    if(nx&&now.getFullYear()===YEAR){
+      var days=Math.round((nx-today)/86400000);
+      nxTxt='<p class="nextopen">◎ 2026年の解禁日: <b>5月1日('+WD[nx.getDay()]+')</b>'+(days>0?' — あと'+days+'日':'')+'。午前5時開始・1日券3,600円(午後券なし)。解禁前日4/30は釣り事務所が17:00〜21:00に開く。</p>';
+    } else {
+      nxTxt='<p class="nextopen">2026年の遊漁は9/30で終了(10/1〜4/30は禁漁)。翌年の解禁日・料金は前年度末〜春先に公式サイトで発表される慣行 → <a href="https://www.naisuimen.or.jp/nikko/" rel="noopener" style="color:var(--gold)">naisuimen.or.jp/nikko/</a></p>';
+    }
+    html='<span class="openbadge is-closed">本日('+m+'/'+d+')は禁漁期間(10/1〜4/30)</span>'+nxTxt;
+  }
+  el.innerHTML=html;
+}
+function renderCal(){
+  var wrap=document.getElementById('calwrap');
+  var now=new Date(); var cy=now.getFullYear(), cm=now.getMonth()+1;
+  var closedNow=!isOpen(cy,cm,now.getDate());
+  var html='';
+  if(cy!==YEAR){
+    html+='<p class="warnnote" style="flex:1 0 100%; margin:0 0 6px">以下は'+YEAR+'年の実績。当年の解禁日・料金・舟の定休日は本図に無い — <a href="https://www.naisuimen.or.jp/nikko/" rel="noopener" style="color:var(--gold)">naisuimen.or.jp/nikko/</a> で確認</p>';
+  }
+  [4,5,6,7,8,9,10].forEach(function(m){
+    var days=MD[m], open=0;
+    for(var d=1;d<=days;d++){ if(seasonFor(m,d)) open++; }
+    var stat = (open===0)?'休(禁漁)':((open===days)?'営業(原則毎日)':'一部 '+open+'日');
+    var base='cd';
+    if(cy===YEAR){
+      if(m<cm) base+=' past';
+      else if(m===cm) base+=' today';
+      else if(closedNow&&open>0&&m===5) base+=' next';
+    } else { base+=' past'; }
+    if(open===0) base+=' shut';
+    var chips='<span class="'+base+'">'+stat+'</span>';
+    if(m===5) chips+='<span class="cd">5/1 解禁 5:00〜</span>';
+    if(m===9) chips+='<span class="cd">9/30 最終日</span>';
+    if(m===10) chips+='<span class="cd shut">10/1 禁漁入り</span>';
+    var rs=[];
+    for(var d2=1;d2<=days;d2++){ if(inRange(m,d2,RESTRICT.from,RESTRICT.to)&&seasonFor(m,d2)) rs.push(d2); }
+    if(rs.length) chips+='<span class="cd part">実験区画制限 '+m+'/'+rs[0]+'〜'+m+'/'+rs[rs.length-1]+'</span>';
+    var bc=BOAT_CLOSED.filter(function(o){return o[0]===m;}).map(function(o){return o[1];});
+    if(bc.length) chips+='<span class="cd shut">舟定休('+YEAR+'年) '+bc.join('・')+'日</span>';
+    else if(BOAT_HOURS[m]===undefined&&seasonFor(m,15)) chips+='<span class="cd part">舟の定休日は本図未収録 — 0288-62-2156</span>';
+    html+='<div class="calm"><h4 class="num">'+m+'月</h4><div class="cald">'+chips+'</div></div>';
+  });
+  wrap.innerHTML=html;
+}
+
+function styleName(s){ return s==='fly'?'フライ':(s==='lure'?'ルアー':'エサ'); }
+function render(){
+  var p=state.phase;
+  document.querySelectorAll('#phasechips .pbtn').forEach(function(b){var on=b.dataset.phase===p.id; b.classList.toggle('on',on); b.setAttribute('aria-pressed',on?'true':'false');});
+  document.querySelectorAll('#stylerow .pbtn').forEach(function(b){var on=b.dataset.style===state.style; b.classList.toggle('on',on); b.setAttribute('aria-pressed',on?'true':'false');});
+  var v=document.getElementById('verdict');
+  if(p.closed){
+    v.innerHTML='<p class="closed"><b>'+esc(p.name)+'</b> — '+esc(p.msg)+'</p>';
+    highlight([]);
+    return;
+  }
+  var pts = state.style==='fly'?p.flyPts:(state.style==='lure'?p.lurePts:BAIT_PTS);
+  /* 恒久ガード: 実験区画期間中は 4(終末処理場前)を推奨エリアから外す */
+  if(restrictActive()) pts=pts.filter(function(n){return n!==4;});
+  var tac = state.style==='fly'?p.fly:(state.style==='lure'?p.lure:p.bait);
+  var chips=pts.map(function(n){
+    var w=pcau(n);
+    var c=w?'<span class="vptc">⚠ '+esc(w)+'</span>':'';
+    return '<span class="vpt"><b>'+n+'</b> '+esc(PN[n])+c+'</span>';
+  }).join('');
+  var sub='位置は公式フィールドマップの区画名と実釣記の記述からの推定(地図の点灯マーカー参照。円は区画=面の代表点で、根拠にした地物から100m以上離れることがある)。当日の正解は釣り事務所・レストハウスでの聞き込みと公式のフィールド情報が最速。';
+  if(state.style==='bait') sub='<b>エサのエリアは時期別の一次資料が無いため、時期で変えていない</b> — 公式の放流箇所3か所(9 滝上/1 事務所前桟橋/3 砂浜)と、日付つきのエサ実績があるレストハウス前(2 = 2026-05-23 ニジマス64.9cm、2026-09-04 船・ブドウ虫タナ3m)を並べた推定。'+sub;
+  v.innerHTML=
+   '<div class="verdict">'+
+   '<div class="vcell"><h4>釣りの軸(タナ)</h4><div class="tanabig">'+esc(p.tana)+'</div><p class="tananote">'+esc(p.tanaNote)+'</p><p class="vtemps num">'+esc(p.temps)+'</p></div>'+
+   '<div class="vcell"><h4>有望エリア — '+esc(p.name)+'</h4><div class="vpts">'+chips+'</div>'+
+   '<p class="vsub">'+sub+'</p></div>'+
+   '<div class="vcell"><h4>戦術('+esc(styleName(state.style))+')</h4><ul class="vlist">'+li(tac)+'</ul>'+(p.warn?'<p class="vwarn">⚠ '+esc(p.warn)+'</p>':'')+'</div>'+
+   '<div class="vev"><b>この時期の実測記録:</b> '+p.records.map(esc).join(' / ')+'</div>'+
+   '</div>';
+  highlight(pts);
+}
+function highlight(pts){
+  for(var i=1;i<=NPT;i++){
+    var g=document.getElementById('pt'+i);
+    if(!g) continue;
+    g.classList.remove('hot','dim');
+    if(pts.length){ g.classList.add(pts.indexOf(i)>=0?'hot':'dim'); }
+  }
+}
+var chipsRow=document.getElementById('phasechips');
+PHASES.forEach(function(p){
+  var b=document.createElement('button');
+  b.type='button'; b.className='pbtn'; b.dataset.phase=p.id; b.textContent=p.chip; b.setAttribute('aria-pressed','false');
+  b.addEventListener('click',function(){state.phase=p;render();});
+  chipsRow.appendChild(b);
+});
+document.querySelectorAll('#stylerow .pbtn').forEach(function(b){
+  b.addEventListener('click',function(){state.style=b.dataset.style;render();});
+});
+var wr=document.getElementById('windrow'), wo=document.getElementById('windout');
+WINDS.forEach(function(w){
+  var b=document.createElement('button');
+  b.type='button'; b.className='pbtn'; b.dataset.wind=w.id; b.textContent=w.label; b.setAttribute('aria-pressed','false');
+  b.addEventListener('click',function(){
+    document.querySelectorAll('#windrow .pbtn').forEach(function(x){var on=x===b; x.classList.toggle('on',on); x.setAttribute('aria-pressed',on?'true':'false');});
+    wo.hidden=false;
+    wo.innerHTML='<b>'+esc(w.label)+'</b> → '+esc(w.advice)+'<span class="we">出典: '+esc(w.ev)+'</span>';
+  });
+  wr.appendChild(b);
+});
+var qp=qs.get('phase');
+var qstyle=qs.get('style');
+if(qstyle==='lure'||qstyle==='bait') state.style=qstyle;
+var forced=null;
+if(qp){ PHASES.forEach(function(p){ if(p.id===qp) forced=p; }); }
+state.phase=forced||phaseForToday();
+var now=new Date();
+document.getElementById('todayline').textContent='— 今日は'+(now.getMonth()+1)+'月'+now.getDate()+'日('+WD[now.getDay()]+')。自動判定: '+state.phase.name;
+renderOpenState();
+renderCal();
+render();
+if(now.getFullYear()!==YEAR){
+  var yn=document.createElement('p');
+  yn.className='yearnote';
+  yn.textContent='⚠ この図のシーズン・料金・戦術データは'+YEAR+'年版'+(now.getFullYear()>YEAR?'(過年度)。翌年の解禁日・料金は前年度末〜春先にnaisuimen.or.jp/nikko/で発表される — 本図の日程・料金を当年に流用しないこと。':'。');
+  var os=document.getElementById('openstate');
+  os.parentNode.insertBefore(yn,os);
+}
+})();
+</script>
+
+</body>
+</html>
