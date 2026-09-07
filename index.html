@@ -47,7 +47,7 @@
       --shore:#66a8b8;
       --series:#4396b8; --warn:#b98220;
       --est:#c78e2d; --est-ink:#c78e2d; --est-bg:rgba(185,130,32,.14);
-      --ok:#6da166; --ng:#c06a55; --ng-bg:rgba(192,106,85,.12);
+      --ok:#6da166; --ng:#d4826c; --ng-bg:rgba(212,130,108,.12);
       --halo:#0a1b22;
     }
   }
@@ -60,7 +60,7 @@
     --shore:#66a8b8;
     --series:#4396b8; --warn:#b98220;
     --est:#c78e2d; --est-ink:#c78e2d; --est-bg:rgba(185,130,32,.14);
-    --ok:#6da166; --ng:#c06a55; --ng-bg:rgba(192,106,85,.12);
+    --ok:#6da166; --ng:#d4826c; --ng-bg:rgba(212,130,108,.12);
     --halo:#0a1b22;
   }
   *{box-sizing:border-box}
@@ -282,7 +282,8 @@
     </div>
     <p class="ln-today" id="ln-today"></p>
   </nav>
-  <script>/* LAKENAV-STATUS v1 */
+  <script>/* JST-TODAY v1 */function TODAY(){var n=new Date();return new Date(n.getTime()+(n.getTimezoneOffset()+540)*60000);}</script>
+<script>/* LAKENAV-STATUS v1 */
 (function(){
   /* 5湖の当日可否。各ページの SEASONS/OPEN と同じ 2026年日程(年次更新は5ページ同時に行う。navtest.sh で全日一致を検証) */
   var Y=2026;
@@ -311,7 +312,7 @@
   }
   function render(){
     if(typeof document==='undefined'||!document.querySelectorAll) return;
-    var now=new Date(), y=now.getFullYear(), m=now.getMonth()+1, d=now.getDate();
+    var now=TODAY(), y=now.getFullYear(), m=now.getMonth()+1, d=now.getDate();
     var wd=['日','月','火','水','木','金','土'];
     var line=document.getElementById('ln-today');
     var tabs=document.querySelectorAll('.ln-tab[data-lake]');
@@ -340,6 +341,7 @@
   render();
 })();
 </script>
+<script>/* DAY-ROLLOVER v1 */(function(){var d0=TODAY().toDateString();function chk(){if(TODAY().toDateString()!==d0)location.reload();}window.addEventListener('pageshow',chk);document.addEventListener('visibilitychange',function(){if(!document.hidden)chk();});})();</script>
   <div class="headmeta">
     <span class="chip"><b>2026シーズン</b> 5/1〜9/30(期間中は原則毎日・日券制)</span>
     <span class="chip"><b>釣法</b> フライ/ルアー/エサ・舟は貸し舟のみ(持込・エンジン禁止)</span>
@@ -875,7 +877,7 @@
 <footer>
   <b>出典</b> — 規則・料金・区域・釣り舟・2026年シーズン: 全国内水面漁業協同組合連合会 日光支所 公式(<a href="https://www.naisuimen.or.jp/nikko/" rel="noopener">naisuimen.or.jp/nikko/</a>、fishing/fee.html・fishing/regulations.html・fishing/boat.html・fishing/area.html・fishing/festa.html、いずれも2026-09-05取得・逐語照合)/日々の釣況・岸水温・釣果: <a href="https://www.naisuimen.or.jp/nikko/info/field-info/index-yunoko.html" rel="noopener">同 湯ノ湖フィールド情報</a>/湖面区画・岸の地名・海抜1475m: 同 フィールドマップ(fishing/field/yunoko-p1.pdf)/2026年9月 釣り舟営業カレンダー(index/2026/20260905122748_rotated.pdf)・水草抑制実験のご案内(index/2026/2026experiment.pdf、岡山大学農学部・株式会社テクアノーツ)・2026年 遊漁ガイド(index/2026/2026guide.pdf)/湖心の鉛直水温・DO・透明度・標高・面積: 栃木県 水質年表・環境白書/気温・風速・降水: 気象庁 奥日光アメダス(41166)/クマ目撃・道路・駐車場: 環境省 日光湯元ビジターセンター・環境省ライブカメラ(camera_no=81)/運賃: 東武バス 日光エリア(2026-09-05時点で運賃1,950円表記・改定告知なしを実測)/金精道路の冬期閉鎖: 群馬県・栃木県 道路情報/季節別の釣り方: とちぎの鱒釣り/岸の傾向: 日光鱒釣研究所(二次情報・裏取り1系統)/ウェーディング・ルアーローテーション: ブンブン釣行記/過去年の料金・解禁日の確認: Internet Archive Wayback Machine/汀線・面積・距離・施設位置: © OpenStreetMap contributors(ODbL、relation 10415494)による実測。
   <br>姉妹編(5湖): <a href="https://oatbox99.github.io/marunuma-map/" rel="noopener">丸沼 一枚攻略図</a> / <a href="https://oatbox99.github.io/ojirinuma-map/" rel="noopener">大尻沼 一枚攻略図</a> / <a href="https://oatbox99.github.io/sugenuma-map/" rel="noopener">菅沼 一枚攻略図</a> / <a href="https://oatbox99.github.io/chuzenjiko-map/" rel="noopener">中禅寺湖 一枚攻略図</a>。2026-09-05作成。主要ファクトは多エージェント採掘+3レンズ(fidelity/regulation/complete)の敵対検証と公式原文の逐語照合を経ている。裏取りが1系統のもの・要確認のものは本文中に明示した。
-  <br><b>最終確認 2026-09-07</b>(公式ページの再取得は2026-09-05〜07・5湖相互リンクの HTTP 200 確認)。<b>本図は公式規則の代替ではない — 出発前に必ず公式サイト・電話で当日情報を確認すること。</b>
+  <br><b>最終確認 2026-09-07</b>(公式ページの再取得 2026-09-05〜07、5湖相互リンクの HTTP 200 確認)。<b>本図は公式規則の代替ではない — 出発前に必ず公式サイト・電話で当日情報を確認すること。</b>
 </footer>
 </div>
 
@@ -893,7 +895,7 @@ var PCAU={9:'橋より湯滝側は立入禁止/2026-08-18 湯滝落ち口でク�
    期間(RESTRICT)内だけ強い文言にし、4は期間外でも恒久の注記を返す */
 function mdOverlap(f1,t1,f2,t2){ var a=f1[0]*100+f1[1], b=t1[0]*100+t1[1], c=f2[0]*100+f2[1], e=t2[0]*100+t2[1]; if(a>b) return c<=b||a<=e; return a<=e&&c<=b; }
 /* 選択中の時期チップ(state.phase)の期間が実験区画の制限期間と重なれば制限中として扱う。未選択時は今日の日付で判定 */
-function restrictActive(){ var p=(typeof state!=='undefined')&&state.phase; if(p&&!p.closed&&p.from&&p.to) return mdOverlap(p.from,p.to,RESTRICT.from,RESTRICT.to); var n=new Date(); return inRange(n.getMonth()+1,n.getDate(),RESTRICT.from,RESTRICT.to); }
+function restrictActive(){ var p=(typeof state!=='undefined')&&state.phase; if(p&&!p.closed&&p.from&&p.to) return mdOverlap(p.from,p.to,RESTRICT.from,RESTRICT.to); var n=TODAY(); return inRange(n.getMonth()+1,n.getDate(),RESTRICT.from,RESTRICT.to); }
 function pcau(n){
   if(n===4) return restrictActive()?'実験区画そのもの — 投入・接近禁止(7/16〜9/10)':'実験区画(7/16〜9/10は投入・接近禁止)';
   if(n===3&&restrictActive()) return '実験区画(終末処理場前)の隣 — 区画内・周辺へ投げない';
@@ -988,7 +990,7 @@ function inRange(m,d,from,to){
   return a<=b ? (v>=a&&v<=b) : (v>=a||v<=b);
 }
 function phaseForToday(){
-  var now=new Date(), m=now.getMonth()+1, d=now.getDate();
+  var now=TODAY(), m=now.getMonth()+1, d=now.getDate();
   for(var i=1;i<PHASES.length;i++){ if(inRange(m,d,PHASES[i].from,PHASES[i].to)) return PHASES[i]; }
   return PHASES[0];
 }
@@ -1011,7 +1013,7 @@ function nextOpenDate(from){
   return (s>=from)?s:null;
 }
 function renderOpenState(){
-  var now=new Date();
+  var now=TODAY();
   var today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
   var m=now.getMonth()+1, d=now.getDate();
   var el=document.getElementById('openstate');
@@ -1057,7 +1059,7 @@ function renderOpenState(){
 }
 function renderCal(){
   var wrap=document.getElementById('calwrap');
-  var now=new Date(); var cy=now.getFullYear(), cm=now.getMonth()+1;
+  var now=TODAY(); var cy=now.getFullYear(), cm=now.getMonth()+1;
   var closedNow=!isOpen(cy,cm,now.getDate());
   var html='';
   if(cy!==YEAR){
@@ -1156,7 +1158,7 @@ if(qstyle==='lure'||qstyle==='bait') state.style=qstyle;
 var forced=null;
 if(qp){ PHASES.forEach(function(p){ if(p.id===qp) forced=p; }); }
 state.phase=forced||phaseForToday();
-var now=new Date();
+var now=TODAY();
 document.getElementById('todayline').textContent='— 今日は'+(now.getMonth()+1)+'月'+now.getDate()+'日('+WD[now.getDay()]+')。'+(forced?'表示中(手動選択): ':(now.getFullYear()===YEAR?'自動判定: ':YEAR+'年の時期区分を参考表示: '))+state.phase.name;
 renderOpenState();
 renderCal();
